@@ -407,421 +407,423 @@
     </nav>
   </div>
 </header>
+<main>
+	<!-- ═══════════════ PROJECT DETAIL MODAL ═══════════════ -->
+	<div class="modal-overlay" id="projectModal" onclick="if(event.target===this)closeModal()">
+	  <div class="modal">
+		<button class="modal-close" onclick="closeModal()">&times;</button>
 
-<!-- ═══════════════ PROJECT DETAIL MODAL ═══════════════ -->
-<div class="modal-overlay" id="projectModal" onclick="if(event.target===this)closeModal()">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
+		
 
-    
+		<div class="modal-body">
+		  <h2 id="modalTitle"></h2>
 
-    <div class="modal-body">
-      <h2 id="modalTitle"></h2>
+		  <div id="imageCounter" class="image-counter"></div>
 
-      <div id="imageCounter" class="image-counter"></div>
-
-      <div class="description" id="modalDescription"></div>
-      <div class="tags" id="modalTags"></div>
-    </div>
-    <!-- SLIDER -->
-    <div class="modal-slider" id="slider">
-      <button class="slider-btn prev" onclick="prevSlide()">‹</button>
-
-      <img class="modal-image" id="modalImage" src="" alt="" loading="lazy">
-
-      <button class="slider-btn next" onclick="nextSlide()">›</button>
-    </div>
-
-    <!-- THUMBNAILS -->
-    <div class="thumbnail-strip" id="thumbnailStrip"></div>
-  </div>
-</div>
-
-<!-- ═══════════════ END PROJECT DETAIL MODAL ═══════════════ -->
-
-
-
-<section id="hero">
-  <div class="container" style="padding-top: 60px; padding-bottom: 60px;">
-    <h1 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-bright); margin-bottom: 16px;">
-      Full Stack Developer & AI Engineer
-    </h1>
-    
-    <p style="max-width: 600px; color: var(--text-dim); margin-bottom: 24px;">
-      I build scalable systems, AI-powered applications, and high-performance microservices. 
-      10+ years experience delivering production-ready software for enterprise and startups.
-    </p>
-
-    <div style="display:flex; gap:12px;">
-      <a href="#projects" class="btn-primary">View Projects</a>
-      <a href="mailto:aldopraherda@gmail.com" class="btn-outline">Contact Me</a>
-    </div>
-  </div>
-</section>
-	<div class="container">
-		<div class="tags">
-		  <span class="tag">React</span>
-		  <span class="tag">Node.js</span>
-		  <span class="tag">Go</span>
-		  <span class="tag">Python</span>
-		  <span class="tag">Microservices</span>
-		  <span class="tag">AI / YOLO</span>
-		  <span class="tag">PostgreSQL</span>
+		  <div class="description" id="modalDescription"></div>
+		  <div class="tags" id="modalTags"></div>
 		</div>
+		<!-- SLIDER -->
+		<div class="modal-slider" id="slider">
+		  <button class="slider-btn prev" onclick="prevSlide()">‹</button>
+
+		  <img class="modal-image" id="modalImage" src="" alt="" loading="lazy">
+
+		  <button class="slider-btn next" onclick="nextSlide()">›</button>
+		</div>
+
+		<!-- THUMBNAILS -->
+		<div class="thumbnail-strip" id="thumbnailStrip"></div>
+	  </div>
 	</div>
 
-<!-- ═══════════════ FEATURED PROJECTS ═══════════════ -->
-<section id="projects">
-  <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-subtitle">Selected Projects — Production systems &amp; AI applications</p>
+	<!-- ═══════════════ END PROJECT DETAIL MODAL ═══════════════ -->
 
-    <div class="project-grid">
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-1" 
-		data-images="https://ik.imagekit.io/mbp4i7p96/product_1750810332951_R2FvtuA6a.jpg,https://ik.imagekit.io/mbp4i7p96/siakad/isi-irs.png,https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png,https://ik.imagekit.io/mbp4i7p96/siakad/FireShot%20Capture%201289%20-%20Sistem%20Informasi%20Akademik%20-%20_siakad.uinsatu.ac.id_.png,https://ik.imagekit.io/mbp4i7p96/siakad/kalender-akademik.png,https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png" 
-		data-title="University Management System Microservices"  
-		data-tags="React,Go,.NET Core,PHP Symfony,RabbitMQ,PostgreSQL">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png?updatedAt=1751588193814" alt="University Management System" loading="lazy">
-        <div class="project-card-body">
-          <h3>University Management System Microservices</h3>
-          <p>Developed university management system microservices using PHP REST API and ReactJS handling thousands of active students.</p>
-          <div class="tags">
-            <span class="tag">React</span><span class="tag">Go</span><span class="tag">.NET Core</span>
-          </div>
-        </div>
-      </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-2" 
-		data-images="https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos1.png?updatedAt=1753328369314,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos2.png?updatedAt=1753328369353,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-products.png?updatedAt=1753328369218https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-analytics.png?updatedAt=1753328369166,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-settings.png?updatedAt=1753328369140,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-orders.png?updatedAt=1753328369174" 
-		data-title="TokoPOS – Mobile Point of Sale System" 		
-		data-tags="React Native,Express JS,TypeScript,Zustand">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos1.png" alt="TokoPOS" loading="lazy">
-        <div class="project-card-body">
-          <h3>TokoPOS – Mobile Point of Sale System</h3>
-          <p>Mobile POS system built with React Native and Node.js backend.</p>
-          <div class="tags">
-            <span class="tag">React Native</span><span class="tag">Express JS</span><span class="tag">TypeScript</span>
-          </div>
-        </div>
-      </div>
+	<section id="hero">
+	  <div class="container" style="padding-top: 60px; padding-bottom: 60px;">
+		<h1 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-bright); margin-bottom: 16px;">
+		  Full Stack Developer & AI Engineer
+		</h1>
+		
+		<p style="max-width: 600px; color: var(--text-dim); margin-bottom: 24px;">
+		  I build scalable systems, AI-powered applications, and high-performance microservices. 
+		  10+ years experience delivering production-ready software for enterprise and startups.
+		</p>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-3" 
-		data-images="https://ik.imagekit.io/mbp4i7p96/apos/angular1.png" 
-		data-title="POS System – Full Stack (Spring Boot + Angular)" 
-		data-tags="Angular,Java,Spring Boot,Spring Data JPA">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/apos/angular1.png" alt="POS System" loading="lazy">
-        <div class="project-card-body">
-          <h3>POS System – Full Stack (Spring Boot + Angular)</h3>
-          <p>Full-stack point of sale system with Spring Boot backend and Angular frontend.</p>
-          <div class="tags">
-            <span class="tag">Angular</span><span class="tag">Java</span><span class="tag">Spring Boot</span>
-          </div>
-        </div>
-      </div>
+		<div style="display:flex; gap:12px;">
+		  <a href="#projects" class="btn-primary">View Projects</a>
+		  <a href="mailto:aldopraherda@gmail.com" class="btn-outline">Contact Me</a>
+		</div>
+	  </div>
+	</section>
+		<div class="container">
+			<div class="tags">
+			  <span class="tag">React</span>
+			  <span class="tag">Node.js</span>
+			  <span class="tag">Go</span>
+			  <span class="tag">Python</span>
+			  <span class="tag">Microservices</span>
+			  <span class="tag">AI / YOLO</span>
+			  <span class="tag">PostgreSQL</span>
+			</div>
+		</div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-4" 
-		data-images="https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria2.png,https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria1.png?updatedAt=1753320739524" 
-		data-title="Bacteria Detector – AI Application" 
-		data-tags="Python,YOLO,Go,Flask">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria2.png" alt="Bacteria Detector" loading="lazy">
-        <div class="project-card-body">
-          <h3>Bacteria Detector – AI Application</h3>
-          <p>Bacteria detector REST API using Flask and YOLOv8. Mobile app to upload images and read detection results.</p>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">Go</span><span class="tag">Flask</span>
-          </div>
-        </div>
-      </div>
+	<!-- ═══════════════ FEATURED PROJECTS ═══════════════ -->
+	<section id="projects">
+	  <div class="container">
+		<h2 class="section-title">Featured Projects</h2>
+		<p class="section-subtitle">Selected Projects — Production systems &amp; AI applications</p>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-5" 
-		data-images="images/corn-moisture.jpg" 
-		data-title="Corn Moisture Detector – IoT + AI" 
-		data-tags="ESP32,Flutter,AS7265X,C">
-        <img class="project-card-thumb" src="images/corn-moisture.jpg" alt="Corn Moisture Detector" loading="lazy">
-        <div class="project-card-body">
-          <h3>Corn Moisture Detector – IoT + AI</h3>
-          <p>ESP32 module with AS7265X sensor to detect corn moisture. Mobile app reads data via Bluetooth.</p>
-          <div class="tags">
-            <span class="tag">ESP32</span><span class="tag">Flutter</span><span class="tag">AS7265X</span><span class="tag">C</span>
-          </div>
-        </div>
-      </div>
+		<div class="project-grid">
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-6" 
-		data-images="https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-12-43-31_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072793,https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-13-19-73_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072783,https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-13-28-15_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072717" 
-		data-title="Breast Cancer Detector – AI Application" 		
-		data-tags="Flask,Flutter,OpenCV,Dart">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-12-43-31_e760499b0a8a48964d5ae830994058f2.jpg" alt="Breast Cancer Detector" loading="lazy">
-        <div class="project-card-body">
-          <h3>Breast Cancer Detector – AI Application</h3>
-          <p>Breast cancer detector REST API from medical images using Flask and YOLOv8 with mobile app.</p>
-          <div class="tags">
-            <span class="tag">Flask</span><span class="tag">Flutter</span><span class="tag">OpenCV</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-1" 
+			data-images="https://ik.imagekit.io/mbp4i7p96/product_1750810332951_R2FvtuA6a.jpg,https://ik.imagekit.io/mbp4i7p96/siakad/isi-irs.png,https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png,https://ik.imagekit.io/mbp4i7p96/siakad/FireShot%20Capture%201289%20-%20Sistem%20Informasi%20Akademik%20-%20_siakad.uinsatu.ac.id_.png,https://ik.imagekit.io/mbp4i7p96/siakad/kalender-akademik.png,https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png" 
+			data-title="University Management System Microservices"  
+			data-tags="React,Go,.NET Core,PHP Symfony,RabbitMQ,PostgreSQL">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png?updatedAt=1751588193814" alt="University Management System" loading="lazy">
+			<div class="project-card-body">
+			  <h3>University Management System Microservices</h3>
+			  <p>Developed university management system microservices using PHP REST API and ReactJS handling thousands of active students.</p>
+			  <div class="tags">
+				<span class="tag">React</span><span class="tag">Go</span><span class="tag">.NET Core</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-7" 
-		data-images="https://ik.imagekit.io/mbp4i7p96/algae%20detector/Screenshot_2025-07-17-19-18-01-65_7c3c0ccbc22b6b1c776d64469447b31f.jpg?updatedAt=1752893403716,https://ik.imagekit.io/mbp4i7p96/algae%20detector/algae2.png?updatedAt=1753320653290" 
-		data-title="Algae Detector – AI Application" 
-		data-tags="Flask,Android Kotlin,Python,OpenCV">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/algae%20detector/Screenshot_2025-07-17-19-18-01-65_7c3c0ccbc22b6b1c776d64469447b31f.jpg?updatedAt=1752893403716" alt="Algae Detector" loading="lazy">
-        <div class="project-card-body">
-          <h3>Algae Detector – AI Application</h3>
-          <p>Algae detector REST API using Flask and YOLOv8 segmentation with Android Kotlin mobile app.</p>
-          <div class="tags">
-            <span class="tag">Flask</span><span class="tag">Android Kotlin</span><span class="tag">Python</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-2" 
+			data-images="https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos1.png?updatedAt=1753328369314,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos2.png?updatedAt=1753328369353,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-products.png?updatedAt=1753328369218https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-analytics.png?updatedAt=1753328369166,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-settings.png?updatedAt=1753328369140,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-orders.png?updatedAt=1753328369174" 
+			data-title="TokoPOS – Mobile Point of Sale System" 		
+			data-tags="React Native,Express JS,TypeScript,Zustand">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos1.png" alt="TokoPOS" loading="lazy">
+			<div class="project-card-body">
+			  <h3>TokoPOS – Mobile Point of Sale System</h3>
+			  <p>Mobile POS system built with React Native and Node.js backend.</p>
+			  <div class="tags">
+				<span class="tag">React Native</span><span class="tag">Express JS</span><span class="tag">TypeScript</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-8" 
-		data-images="images/safety-monitoring.jpg" 
-		data-title="Safety Monitoring Dashboard" 
-		data-tags="ReactJS,Django REST,MUI">
-        <img class="project-card-thumb" src="images/safety-monitoring.jpg" alt="Safety Monitoring Dashboard" loading="lazy">
-        <div class="project-card-body">
-          <h3>Safety Monitoring Dashboard</h3>
-          <p>Dashboard with user module, role management, notifications, vehicle management, and fleet management.</p>
-          <div class="tags">
-            <span class="tag">ReactJS</span><span class="tag">Django REST</span><span class="tag">MUI</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-3" 
+			data-images="https://ik.imagekit.io/mbp4i7p96/apos/angular1.png" 
+			data-title="POS System – Full Stack (Spring Boot + Angular)" 
+			data-tags="Angular,Java,Spring Boot,Spring Data JPA">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/apos/angular1.png" alt="POS System" loading="lazy">
+			<div class="project-card-body">
+			  <h3>POS System – Full Stack (Spring Boot + Angular)</h3>
+			  <p>Full-stack point of sale system with Spring Boot backend and Angular frontend.</p>
+			  <div class="tags">
+				<span class="tag">Angular</span><span class="tag">Java</span><span class="tag">Spring Boot</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-9" 
-		data-images="images/machine-dashboard.jpg"
-		data-title="Machine Dashboard Application"
-		data-tags="ReactJS,Django REST">
-        <img class="project-card-thumb" src="images/machine-dashboard.jpg" alt="Machine Dashboard" loading="lazy">
-        <div class="project-card-body">
-          <h3>Machine Dashboard Application</h3>
-          <p>Machine dashboard with user management, machine profiles, and alert modules.</p>
-          <div class="tags">
-            <span class="tag">ReactJS</span><span class="tag">Django REST</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-4" 
+			data-images="https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria2.png,https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria1.png?updatedAt=1753320739524" 
+			data-title="Bacteria Detector – AI Application" 
+			data-tags="Python,YOLO,Go,Flask">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria2.png" alt="Bacteria Detector" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Bacteria Detector – AI Application</h3>
+			  <p>Bacteria detector REST API using Flask and YOLOv8. Mobile app to upload images and read detection results.</p>
+			  <div class="tags">
+				<span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">Go</span><span class="tag">Flask</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-10" 
-		data-images="https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx.png?updatedAt=1753169965098,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(3).png?updatedAt=1753169965100,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(1).png?updatedAt=1753169965088,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(2).png?updatedAt=1753169965079,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(4).png?updatedAt=1753169965104,https://ik.imagekit.io/mbp4i7p96/snpool/Screenshot%20at%202025-07-25%2011-23-35.png?updatedAt=1753417536198,https://ik.imagekit.io/mbp4i7p96/snpool/Screenshot%20at%202025-07-25%2011-23-46.png?updatedAt=1753417536194,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx.png?updatedAt=1753169965098,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(3).png?updatedAt=1753169965100,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(1).png?updatedAt=1753169965088" 
-		data-title="E-METERAI for Skill Academy" 
-		data-tags="Spring Boot,Java,PostgreSQL">
-        <img class="project-card-thumb" src="images/e-meterai.jpg" alt="E-METERAI" loading="lazy">
-        <div class="project-card-body">
-          <h3>E-METERAI for Skill Academy</h3>
-          <p>Digital stamp (e-meterai) system development for Skill Academy platform.</p>
-          <div class="tags">
-            <span class="tag">Spring Boot</span><span class="tag">Java</span><span class="tag">PostgreSQL</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-5" 
+			data-images="images/corn-moisture.jpg" 
+			data-title="Corn Moisture Detector – IoT + AI" 
+			data-tags="ESP32,Flutter,AS7265X,C">
+			<img class="project-card-thumb" src="images/corn-moisture.jpg" alt="Corn Moisture Detector" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Corn Moisture Detector – IoT + AI</h3>
+			  <p>ESP32 module with AS7265X sensor to detect corn moisture. Mobile app reads data via Bluetooth.</p>
+			  <div class="tags">
+				<span class="tag">ESP32</span><span class="tag">Flutter</span><span class="tag">AS7265X</span><span class="tag">C</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-11" 
-		data-images="https://ik.imagekit.io/mbp4i7p96/simak/image24.png?updatedAt=1753168467215,https://ik.imagekit.io/mbp4i7p96/simak/image22.png?updatedAt=1753168464039,https://ik.imagekit.io/mbp4i7p96/simak/image10.png?updatedAt=1753168459094,https://ik.imagekit.io/mbp4i7p96/simak/image2.png?updatedAt=1753168459073,https://ik.imagekit.io/mbp4i7p96/simak/image3.png?updatedAt=1753168458980,https://ik.imagekit.io/mbp4i7p96/simak/image24.png?updatedAt=1753168467215,https://ik.imagekit.io/mbp4i7p96/simak/image23.png?updatedAt=1753168467070,https://ik.imagekit.io/mbp4i7p96/simak/image22.png?updatedAt=1753168464039" 
-		data-title="Staff Management Application SiMAK" 
-		data-tags="ExpressJS,JavaScript,PostgreSQL">
-        <img class="project-card-thumb" src="images/staff-management.jpg" alt="Staff Management SiMAK" loading="lazy">
-        <div class="project-card-body">
-          <h3>Staff Management Application SiMAK</h3>
-          <p>Staff management system: employment, education, functional positions, rank, training, and certification.</p>
-          <div class="tags">
-            <span class="tag">ExpressJS</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-6" 
+			data-images="https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-12-43-31_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072793,https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-13-19-73_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072783,https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-13-28-15_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072717" 
+			data-title="Breast Cancer Detector – AI Application" 		
+			data-tags="Flask,Flutter,OpenCV,Dart">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-12-43-31_e760499b0a8a48964d5ae830994058f2.jpg" alt="Breast Cancer Detector" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Breast Cancer Detector – AI Application</h3>
+			  <p>Breast cancer detector REST API from medical images using Flask and YOLOv8 with mobile app.</p>
+			  <div class="tags">
+				<span class="tag">Flask</span><span class="tag">Flutter</span><span class="tag">OpenCV</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-12"
-		data-images="https://ik.imagekit.io/mbp4i7p96/sitanda/image11.png?updatedAt=1753167237291,https://ik.imagekit.io/mbp4i7p96/sitanda/image1.png?updatedAt=1753167232620,https://ik.imagekit.io/mbp4i7p96/sitanda/image2.png?updatedAt=1753167232651" 
-		data-title="Document Management App [SiTANDA]" 
-		data-tags="ExpressJS,JavaScript,Java,Android">
-        <img class="project-card-thumb" src="images/document-management.jpg" alt="Document Management SiTANDA" loading="lazy">
-        <div class="project-card-body">
-          <h3>Document Management App [SiTANDA]</h3>
-          <p>Web app to manage official incoming/outgoing letters with REST API and Android app with push notifications.</p>
-          <div class="tags">
-            <span class="tag">ExpressJS</span><span class="tag">JavaScript</span><span class="tag">Android</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-7" 
+			data-images="https://ik.imagekit.io/mbp4i7p96/algae%20detector/Screenshot_2025-07-17-19-18-01-65_7c3c0ccbc22b6b1c776d64469447b31f.jpg?updatedAt=1752893403716,https://ik.imagekit.io/mbp4i7p96/algae%20detector/algae2.png?updatedAt=1753320653290" 
+			data-title="Algae Detector – AI Application" 
+			data-tags="Flask,Android Kotlin,Python,OpenCV">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/algae%20detector/Screenshot_2025-07-17-19-18-01-65_7c3c0ccbc22b6b1c776d64469447b31f.jpg?updatedAt=1752893403716" alt="Algae Detector" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Algae Detector – AI Application</h3>
+			  <p>Algae detector REST API using Flask and YOLOv8 segmentation with Android Kotlin mobile app.</p>
+			  <div class="tags">
+				<span class="tag">Flask</span><span class="tag">Android Kotlin</span><span class="tag">Python</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)"  data-content="project-13"
-		data-images="https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/dashboard.jpg?updatedAt=1752892597609,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree-2.jpg?updatedAt=1752892708871,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-15-32-91_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752892476850,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/tree%20in%20orchard.jpg?updatedAt=1752892745032,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-15-49-41_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752892476527,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-16-58-90_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752893453723,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg?updatedAt=1752892555291,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/dashboard.jpg?updatedAt=1752892597609"
-		data-title="Fruit Detector – AI [MekaVision]"
-		data-tags="Flask,Mask R-CNN,Android,Python">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg?updatedAt=1752892555291" alt="Fruit Detector MekaVision" loading="lazy">
-        <div class="project-card-body">
-          <h3>Fruit Detector – AI [MekaVision]</h3>
-          <p>Fruit counting app using Mask R-CNN segmentation. Upload tree images; server returns fruit count.</p>
-          <div class="tags">
-            <span class="tag">Flask</span><span class="tag">Mask R-CNN</span><span class="tag">Android</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-8" 
+			data-images="images/safety-monitoring.jpg" 
+			data-title="Safety Monitoring Dashboard" 
+			data-tags="ReactJS,Django REST,MUI">
+			<img class="project-card-thumb" src="images/safety-monitoring.jpg" alt="Safety Monitoring Dashboard" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Safety Monitoring Dashboard</h3>
+			  <p>Dashboard with user module, role management, notifications, vehicle management, and fleet management.</p>
+			  <div class="tags">
+				<span class="tag">ReactJS</span><span class="tag">Django REST</span><span class="tag">MUI</span>
+			  </div>
+			</div>
+		  </div>
 
-      
+		  <div class="project-card" onclick="openProject(this)" data-content="project-9" 
+			data-images="images/machine-dashboard.jpg"
+			data-title="Machine Dashboard Application"
+			data-tags="ReactJS,Django REST">
+			<img class="project-card-thumb" src="images/machine-dashboard.jpg" alt="Machine Dashboard" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Machine Dashboard Application</h3>
+			  <p>Machine dashboard with user management, machine profiles, and alert modules.</p>
+			  <div class="tags">
+				<span class="tag">ReactJS</span><span class="tag">Django REST</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-14"
-		data-images="https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-landing.jpg?updatedAt=1753242768948,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-solutions.jpg?updatedAt=1753242769322,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-landing.jpg?updatedAt=1753242768948,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-resources.jpg?updatedAt=1753242769288" 
-		data-title="WordPress for Veriflow.net" 
-		data-tags="WordPress,PHP">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-resources.jpg?updatedAt=1753242769288" alt="WordPress Veriflow" loading="lazy">
-        <div class="project-card-body">
-          <h3>WordPress for Veriflow.net</h3>
-          <p>Custom WordPress theme with advanced-custom-fields-pro, custom plugins, and marketing integration.</p>
-          <div class="tags">
-            <span class="tag">WordPress</span><span class="tag">PHP</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-10" 
+			data-images="https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx.png?updatedAt=1753169965098,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(3).png?updatedAt=1753169965100,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(1).png?updatedAt=1753169965088,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(2).png?updatedAt=1753169965079,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(4).png?updatedAt=1753169965104,https://ik.imagekit.io/mbp4i7p96/snpool/Screenshot%20at%202025-07-25%2011-23-35.png?updatedAt=1753417536198,https://ik.imagekit.io/mbp4i7p96/snpool/Screenshot%20at%202025-07-25%2011-23-46.png?updatedAt=1753417536194,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx.png?updatedAt=1753169965098,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(3).png?updatedAt=1753169965100,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(1).png?updatedAt=1753169965088" 
+			data-title="E-METERAI for Skill Academy" 
+			data-tags="Spring Boot,Java,PostgreSQL">
+			<img class="project-card-thumb" src="images/e-meterai.jpg" alt="E-METERAI" loading="lazy">
+			<div class="project-card-body">
+			  <h3>E-METERAI for Skill Academy</h3>
+			  <p>Digital stamp (e-meterai) system development for Skill Academy platform.</p>
+			  <div class="tags">
+				<span class="tag">Spring Boot</span><span class="tag">Java</span><span class="tag">PostgreSQL</span>
+			  </div>
+			</div>
+		  </div>
 
-      <div class="project-card" onclick="openProject(this)" data-content="project-14"
-		data-images="https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_24_AM.png?updatedAt=1753910778193,https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_27_AM.png?updatedAt=1753910862647,https://ik.imagekit.io/mbp4i7p96/panasas/Panasas-High-Performance-Parallel-Storage-for-Big-Data-Applications--07-31-2025_05_26_AM.png?updatedAt=1753914423840" 
-		data-title="Various CMS & Web Projects (Vega10)" 
-		data-tags="Joomla,Drupal,WordPress,Hubspot,Webflow">
-        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_24_AM.png?updatedAt=1753910778193" alt="CMS Projects" loading="lazy">
-        <div class="project-card-body">
-          <h3>Various CMS & Web Projects (Vega10)</h3>
-          <p>Custom Joomla, Drupal, WordPress, Marketo, Hubspot, and Webflow sites for various companies.</p>
-          <div class="tags">
-            <span class="tag">Joomla</span><span class="tag">Drupal</span><span class="tag">WordPress</span>
-          </div>
-        </div>
-      </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-11" 
+			data-images="https://ik.imagekit.io/mbp4i7p96/simak/image24.png?updatedAt=1753168467215,https://ik.imagekit.io/mbp4i7p96/simak/image22.png?updatedAt=1753168464039,https://ik.imagekit.io/mbp4i7p96/simak/image10.png?updatedAt=1753168459094,https://ik.imagekit.io/mbp4i7p96/simak/image2.png?updatedAt=1753168459073,https://ik.imagekit.io/mbp4i7p96/simak/image3.png?updatedAt=1753168458980,https://ik.imagekit.io/mbp4i7p96/simak/image24.png?updatedAt=1753168467215,https://ik.imagekit.io/mbp4i7p96/simak/image23.png?updatedAt=1753168467070,https://ik.imagekit.io/mbp4i7p96/simak/image22.png?updatedAt=1753168464039" 
+			data-title="Staff Management Application SiMAK" 
+			data-tags="ExpressJS,JavaScript,PostgreSQL">
+			<img class="project-card-thumb" src="images/staff-management.jpg" alt="Staff Management SiMAK" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Staff Management Application SiMAK</h3>
+			  <p>Staff management system: employment, education, functional positions, rank, training, and certification.</p>
+			  <div class="tags">
+				<span class="tag">ExpressJS</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span>
+			  </div>
+			</div>
+		  </div>
 
-    </div>
-  </div>
-</section>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-12"
+			data-images="https://ik.imagekit.io/mbp4i7p96/sitanda/image11.png?updatedAt=1753167237291,https://ik.imagekit.io/mbp4i7p96/sitanda/image1.png?updatedAt=1753167232620,https://ik.imagekit.io/mbp4i7p96/sitanda/image2.png?updatedAt=1753167232651" 
+			data-title="Document Management App [SiTANDA]" 
+			data-tags="ExpressJS,JavaScript,Java,Android">
+			<img class="project-card-thumb" src="images/document-management.jpg" alt="Document Management SiTANDA" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Document Management App [SiTANDA]</h3>
+			  <p>Web app to manage official incoming/outgoing letters with REST API and Android app with push notifications.</p>
+			  <div class="tags">
+				<span class="tag">ExpressJS</span><span class="tag">JavaScript</span><span class="tag">Android</span>
+			  </div>
+			</div>
+		  </div>
 
-<!-- ═══════════════ WORK EXPERIENCE ═══════════════ -->
-<section id="experience">
-  <div class="container">
-    <h2 class="section-title">Work Experience</h2>
-    <p class="section-subtitle">Professional journey // 5 positions</p>
+		  <div class="project-card" onclick="openProject(this)"  data-content="project-13"
+			data-images="https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/dashboard.jpg?updatedAt=1752892597609,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree-2.jpg?updatedAt=1752892708871,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-15-32-91_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752892476850,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/tree%20in%20orchard.jpg?updatedAt=1752892745032,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-15-49-41_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752892476527,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-16-58-90_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752893453723,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg?updatedAt=1752892555291,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/dashboard.jpg?updatedAt=1752892597609"
+			data-title="Fruit Detector – AI [MekaVision]"
+			data-tags="Flask,Mask R-CNN,Android,Python">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg?updatedAt=1752892555291" alt="Fruit Detector MekaVision" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Fruit Detector – AI [MekaVision]</h3>
+			  <p>Fruit counting app using Mask R-CNN segmentation. Upload tree images; server returns fruit count.</p>
+			  <div class="tags">
+				<span class="tag">Flask</span><span class="tag">Mask R-CNN</span><span class="tag">Android</span>
+			  </div>
+			</div>
+		  </div>
 
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Part Time Full Stack Developer</div>
-          <div class="card-company">uinsatu.ac.id</div>
-        </div>
-        <div class="card-meta">May 2024 – Present</div>
-      </div>
-      <ul>
-        <li>Led development of scalable university management system serving thousands of students</li>
-        <li>Transitioned from monolithic Laravel to microservices (PHP Silex REST + ReactJS)</li>
-        <li>Implemented RabbitMQ for async processing and high-traffic handling</li>
-        <li>Migrated from MySQL to PostgreSQL per microservice</li>
-        <li>Built PDDIKTI exporter/importer using Go (Iris framework)</li>
-        <li>Class scheduling system using Genetic Algorithm in .NET Core</li>
-        <li>Integrated JasperReports and Supervisor for monitoring</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">PHP Symfony</span><span class="tag">ReactJS</span><span class="tag">Go</span><span class="tag">C#</span><span class="tag">.NET Core</span><span class="tag">RabbitMQ</span><span class="tag">PostgreSQL</span>
-      </div>
-    </div>
+		  
 
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Full Stack Web Developer</div>
-          <div class="card-company">Groundup.ai</div>
-        </div>
-        <div class="card-meta">Dec 2022 – Apr 2023</div>
-      </div>
-      <ul>
-        <li>Developed Safety Monitoring Dashboard: user, role management, notifications, vehicle management, video streamer, fleet management</li>
-        <li>Developed Machine Dashboard: user management, machine profiles, alerts</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Express JS</span><span class="tag">React JS</span><span class="tag">MUI</span><span class="tag">Django REST</span>
-      </div>
-    </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-14"
+			data-images="https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-landing.jpg?updatedAt=1753242768948,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-solutions.jpg?updatedAt=1753242769322,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-landing.jpg?updatedAt=1753242768948,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-resources.jpg?updatedAt=1753242769288" 
+			data-title="WordPress for Veriflow.net" 
+			data-tags="WordPress,PHP">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-resources.jpg?updatedAt=1753242769288" alt="WordPress Veriflow" loading="lazy">
+			<div class="project-card-body">
+			  <h3>WordPress for Veriflow.net</h3>
+			  <p>Custom WordPress theme with advanced-custom-fields-pro, custom plugins, and marketing integration.</p>
+			  <div class="tags">
+				<span class="tag">WordPress</span><span class="tag">PHP</span>
+			  </div>
+			</div>
+		  </div>
 
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Freelance AI Developer</div>
-          <div class="card-company">Mekavision – Brawijaya University</div>
-          <div class="card-location">East Java, Indonesia</div>
-        </div>
-        <div class="card-meta">Aug 2021 – Present</div>
-      </div>
-      <ul>
-        <li>Bacteria detection platform combining AI, mobile interfaces, and RESTful services</li>
-        <li>Breast cancer detection solution with computer vision and deep learning</li>
-        <li>Corn moisture detector using ESP32 + AS7265X sensor with mobile app</li>
-        <li>Algae detection with YOLOv8 segmentation</li>
-        <li>Fruit counting system using Mask R-CNN for agricultural yield estimation</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">Flask</span><span class="tag">Flutter</span><span class="tag">ESP32</span><span class="tag">OpenCV</span><span class="tag">Mask R-CNN</span><span class="tag">Android Kotlin</span>
-      </div>
-    </div>
+		  <div class="project-card" onclick="openProject(this)" data-content="project-14"
+			data-images="https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_24_AM.png?updatedAt=1753910778193,https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_27_AM.png?updatedAt=1753910862647,https://ik.imagekit.io/mbp4i7p96/panasas/Panasas-High-Performance-Parallel-Storage-for-Big-Data-Applications--07-31-2025_05_26_AM.png?updatedAt=1753914423840" 
+			data-title="Various CMS & Web Projects (Vega10)" 
+			data-tags="Joomla,Drupal,WordPress,Hubspot,Webflow">
+			<img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_24_AM.png?updatedAt=1753910778193" alt="CMS Projects" loading="lazy">
+			<div class="project-card-body">
+			  <h3>Various CMS & Web Projects (Vega10)</h3>
+			  <p>Custom Joomla, Drupal, WordPress, Marketo, Hubspot, and Webflow sites for various companies.</p>
+			  <div class="tags">
+				<span class="tag">Joomla</span><span class="tag">Drupal</span><span class="tag">WordPress</span>
+			  </div>
+			</div>
+		  </div>
 
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Freelance Full Stack Developer</div>
-          <div class="card-company">Vega10</div>
-        </div>
-        <div class="card-meta">Aug 2012 – Present</div>
-      </div>
-      <ul>
-        <li>Custom Joomla website for proceranetworks.com with email & press release scheduler</li>
-        <li>Custom Drupal sites for proceranetworks.com, panasas.com, logichub.com</li>
-        <li>Custom WordPress themes for veriflow.net, charitieshousing.org, zycada.com, blastwave.io</li>
-        <li>Marketo email templates, Hubspot websites, Webflow sites</li>
-        <li>Web server management: installation, maintenance, and setup</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">Joomla</span><span class="tag">Drupal</span><span class="tag">WordPress</span><span class="tag">Marketo</span><span class="tag">Hubspot</span><span class="tag">Webflow</span><span class="tag">PHP</span>
-      </div>
-    </div>
+		</div>
+	  </div>
+	</section>
 
-    <div class="card">
-      <div class="card-header">
-        <div>
-          <div class="card-title">Web Developer</div>
-          <div class="card-company">Magicsoft-asia</div>
-          <div class="card-location">Singapore</div>
-        </div>
-        <div class="card-meta">Aug 2008 – Jul 2012</div>
-      </div>
-      <ul>
-        <li>Flight training management software using ASP.NET WebForm</li>
-        <li>Clinic management system using WinForm + REST API</li>
-        <li>Managed email server (SmarterMail) and web hosting (Plesk)</li>
-        <li>Android-Omron device integration</li>
-        <li>Managed websites on Amazon EC2</li>
-        <li>Websites using Joomla, WordPress, and custom PHP</li>
-      </ul>
-      <div class="tags">
-        <span class="tag">C#</span><span class="tag">WinForm</span><span class="tag">ASP.NET</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">AWS EC2</span>
-      </div>
-    </div>
+	<!-- ═══════════════ WORK EXPERIENCE ═══════════════ -->
+	<section id="experience">
+	  <div class="container">
+		<h2 class="section-title">Work Experience</h2>
+		<p class="section-subtitle">Professional journey // 5 positions</p>
 
-  </div>
-</section>
-<section id="contact">
-  <div class="container">
-    <h2 class="section-title">Contact</h2>
-    <p class="section-subtitle">Let’s build something together</p>
+		<div class="card">
+		  <div class="card-header">
+			<div>
+			  <div class="card-title">Part Time Full Stack Developer</div>
+			  <div class="card-company">uinsatu.ac.id</div>
+			</div>
+			<div class="card-meta">May 2024 – Present</div>
+		  </div>
+		  <ul>
+			<li>Led development of scalable university management system serving thousands of students</li>
+			<li>Transitioned from monolithic Laravel to microservices (PHP Silex REST + ReactJS)</li>
+			<li>Implemented RabbitMQ for async processing and high-traffic handling</li>
+			<li>Migrated from MySQL to PostgreSQL per microservice</li>
+			<li>Built PDDIKTI exporter/importer using Go (Iris framework)</li>
+			<li>Class scheduling system using Genetic Algorithm in .NET Core</li>
+			<li>Integrated JasperReports and Supervisor for monitoring</li>
+		  </ul>
+		  <div class="tags">
+			<span class="tag">PHP Symfony</span><span class="tag">ReactJS</span><span class="tag">Go</span><span class="tag">C#</span><span class="tag">.NET Core</span><span class="tag">RabbitMQ</span><span class="tag">PostgreSQL</span>
+		  </div>
+		</div>
 
-    <div class="card">
-      <p>Email: aldopraherda@gmail.com</p>
-      <p>LinkedIn: https://www.linkedin.com/in/aldo-praherda-8014b639/</p>
-      <p>GitHub: https://github.com/araneta</p>
-    </div>
-  </div>
-</section>
+		<div class="card">
+		  <div class="card-header">
+			<div>
+			  <div class="card-title">Full Stack Web Developer</div>
+			  <div class="card-company">Groundup.ai</div>
+			</div>
+			<div class="card-meta">Dec 2022 – Apr 2023</div>
+		  </div>
+		  <ul>
+			<li>Developed Safety Monitoring Dashboard: user, role management, notifications, vehicle management, video streamer, fleet management</li>
+			<li>Developed Machine Dashboard: user management, machine profiles, alerts</li>
+		  </ul>
+		  <div class="tags">
+			<span class="tag">Express JS</span><span class="tag">React JS</span><span class="tag">MUI</span><span class="tag">Django REST</span>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <div class="card-header">
+			<div>
+			  <div class="card-title">Freelance AI Developer</div>
+			  <div class="card-company">Mekavision – Brawijaya University</div>
+			  <div class="card-location">East Java, Indonesia</div>
+			</div>
+			<div class="card-meta">Aug 2021 – Present</div>
+		  </div>
+		  <ul>
+			<li>Bacteria detection platform combining AI, mobile interfaces, and RESTful services</li>
+			<li>Breast cancer detection solution with computer vision and deep learning</li>
+			<li>Corn moisture detector using ESP32 + AS7265X sensor with mobile app</li>
+			<li>Algae detection with YOLOv8 segmentation</li>
+			<li>Fruit counting system using Mask R-CNN for agricultural yield estimation</li>
+		  </ul>
+		  <div class="tags">
+			<span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">Flask</span><span class="tag">Flutter</span><span class="tag">ESP32</span><span class="tag">OpenCV</span><span class="tag">Mask R-CNN</span><span class="tag">Android Kotlin</span>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <div class="card-header">
+			<div>
+			  <div class="card-title">Freelance Full Stack Developer</div>
+			  <div class="card-company">Vega10</div>
+			</div>
+			<div class="card-meta">Aug 2012 – Present</div>
+		  </div>
+		  <ul>
+			<li>Custom Joomla website for proceranetworks.com with email & press release scheduler</li>
+			<li>Custom Drupal sites for proceranetworks.com, panasas.com, logichub.com</li>
+			<li>Custom WordPress themes for veriflow.net, charitieshousing.org, zycada.com, blastwave.io</li>
+			<li>Marketo email templates, Hubspot websites, Webflow sites</li>
+			<li>Web server management: installation, maintenance, and setup</li>
+		  </ul>
+		  <div class="tags">
+			<span class="tag">Joomla</span><span class="tag">Drupal</span><span class="tag">WordPress</span><span class="tag">Marketo</span><span class="tag">Hubspot</span><span class="tag">Webflow</span><span class="tag">PHP</span>
+		  </div>
+		</div>
+
+		<div class="card">
+		  <div class="card-header">
+			<div>
+			  <div class="card-title">Web Developer</div>
+			  <div class="card-company">Magicsoft-asia</div>
+			  <div class="card-location">Singapore</div>
+			</div>
+			<div class="card-meta">Aug 2008 – Jul 2012</div>
+		  </div>
+		  <ul>
+			<li>Flight training management software using ASP.NET WebForm</li>
+			<li>Clinic management system using WinForm + REST API</li>
+			<li>Managed email server (SmarterMail) and web hosting (Plesk)</li>
+			<li>Android-Omron device integration</li>
+			<li>Managed websites on Amazon EC2</li>
+			<li>Websites using Joomla, WordPress, and custom PHP</li>
+		  </ul>
+		  <div class="tags">
+			<span class="tag">C#</span><span class="tag">WinForm</span><span class="tag">ASP.NET</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">AWS EC2</span>
+		  </div>
+		</div>
+
+	  </div>
+	</section>
+	<section id="contact">
+	  <div class="container">
+		<h2 class="section-title">Contact</h2>
+		<p class="section-subtitle">Let’s build something together</p>
+
+		<div class="card">
+		  <p>Email: aldopraherda@gmail.com</p>
+		  <p>LinkedIn: https://www.linkedin.com/in/aldo-praherda-8014b639/</p>
+		  <p>GitHub: https://github.com/araneta</p>
+		</div>
+	  </div>
+	</section>
+</main>
 
 <footer>
   <div class="container">
     <p>&copy; 2024 Aldo Praherda. All rights reserved.</p>
   </div>
 </footer>
+
 <!-- project detail -->
 <template id="project-1">
   <p>Developed university management system&nbsp;microservices using PHP REST API and ReactJS that handle thousand active students</p>
