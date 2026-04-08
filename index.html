@@ -368,6 +368,21 @@
   color: var(--text-dim);
   margin-bottom: 10px;
 }
+/* ZOOM EFFECT */
+.modal-slider {
+  position: relative;
+  overflow: hidden; /* important */
+}
+
+.modal-image {
+  transition: transform 0.2s ease;
+  cursor: zoom-in;
+}
+
+.modal-image.zoomed {
+  transform: scale(2); /* adjust zoom level */
+  cursor: zoom-out;
+}
     /* ─── Responsive ─── */
     @media (max-width: 640px) {
       .logo { font-size: 1.1rem; }
@@ -438,7 +453,7 @@
 
     <div style="display:flex; gap:12px;">
       <a href="#projects" class="btn-primary">View Projects</a>
-      <a href="mailto:your@email.com" class="btn-outline">Contact Me</a>
+      <a href="mailto:aldopraherda@gmail.com" class="btn-outline">Contact Me</a>
     </div>
   </div>
 </section>
@@ -546,8 +561,11 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/algae-detector.jpg" data-title="Algae Detector – AI Application" data-description="Algae detector REST API using Flask and YOLOv8 instance segmentation. Android Kotlin mobile app allows researchers to capture and upload water sample images for automated algae identification and classification." data-tags="Flask,Android Kotlin,Python,OpenCV">
-        <img class="project-card-thumb" src="images/algae-detector.jpg" alt="Algae Detector" loading="lazy">
+      <div class="project-card" onclick="openProject(this)" data-content="project-7" 
+		data-images="https://ik.imagekit.io/mbp4i7p96/algae%20detector/Screenshot_2025-07-17-19-18-01-65_7c3c0ccbc22b6b1c776d64469447b31f.jpg?updatedAt=1752893403716,https://ik.imagekit.io/mbp4i7p96/algae%20detector/algae2.png?updatedAt=1753320653290" 
+		data-title="Algae Detector – AI Application" 
+		data-tags="Flask,Android Kotlin,Python,OpenCV">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/algae%20detector/Screenshot_2025-07-17-19-18-01-65_7c3c0ccbc22b6b1c776d64469447b31f.jpg?updatedAt=1752893403716" alt="Algae Detector" loading="lazy">
         <div class="project-card-body">
           <h3>Algae Detector – AI Application</h3>
           <p>Algae detector REST API using Flask and YOLOv8 segmentation with Android Kotlin mobile app.</p>
@@ -557,7 +575,10 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/safety-monitoring.jpg" data-title="Safety Monitoring Dashboard" data-description="Comprehensive safety monitoring dashboard featuring user module, role management, real-time notifications, vehicle management, live video streamer integration, and fleet management. Built with ReactJS frontend and Django REST backend with Material UI components." data-tags="ReactJS,Django REST,MUI">
+      <div class="project-card" onclick="openProject(this)" data-content="project-8" 
+		data-images="images/safety-monitoring.jpg" 
+		data-title="Safety Monitoring Dashboard" 
+		data-tags="ReactJS,Django REST,MUI">
         <img class="project-card-thumb" src="images/safety-monitoring.jpg" alt="Safety Monitoring Dashboard" loading="lazy">
         <div class="project-card-body">
           <h3>Safety Monitoring Dashboard</h3>
@@ -568,7 +589,10 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/machine-dashboard.jpg" data-title="Machine Dashboard Application" data-description="Industrial machine monitoring dashboard with user management, machine profiles, sensor data visualization, performance metrics, and real-time alert modules. Built with ReactJS and Django REST framework." data-tags="ReactJS,Django REST">
+      <div class="project-card" onclick="openProject(this)" data-content="project-9" 
+		data-images="images/machine-dashboard.jpg"
+		data-title="Machine Dashboard Application"
+		data-tags="ReactJS,Django REST">
         <img class="project-card-thumb" src="images/machine-dashboard.jpg" alt="Machine Dashboard" loading="lazy">
         <div class="project-card-body">
           <h3>Machine Dashboard Application</h3>
@@ -579,7 +603,10 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/e-meterai.jpg" data-title="E-METERAI for Skill Academy" data-description="Digital stamp (e-meterai) system development for Skill Academy platform by Ruangguru. Handles document verification, digital seal application, and certificate management with secure stamp validation. Built with Spring Boot and PostgreSQL." data-tags="Spring Boot,Java,PostgreSQL">
+      <div class="project-card" onclick="openProject(this)" data-content="project-10" 
+		data-images="https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx.png?updatedAt=1753169965098,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(3).png?updatedAt=1753169965100,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(1).png?updatedAt=1753169965088,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(2).png?updatedAt=1753169965079,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(4).png?updatedAt=1753169965104,https://ik.imagekit.io/mbp4i7p96/snpool/Screenshot%20at%202025-07-25%2011-23-35.png?updatedAt=1753417536198,https://ik.imagekit.io/mbp4i7p96/snpool/Screenshot%20at%202025-07-25%2011-23-46.png?updatedAt=1753417536194,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx.png?updatedAt=1753169965098,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(3).png?updatedAt=1753169965100,https://ik.imagekit.io/mbp4i7p96/snpool/_DEV_%20Backend%20System%20Skill%20Academy.pptx%20(1).png?updatedAt=1753169965088" 
+		data-title="E-METERAI for Skill Academy" 
+		data-tags="Spring Boot,Java,PostgreSQL">
         <img class="project-card-thumb" src="images/e-meterai.jpg" alt="E-METERAI" loading="lazy">
         <div class="project-card-body">
           <h3>E-METERAI for Skill Academy</h3>
@@ -590,7 +617,10 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/staff-management.jpg" data-title="Staff Management Application SiMAK" data-description="Comprehensive staff management system covering employment records, education history, functional positions, rank management, training tracking, and certification modules. Built with ExpressJS backend and PostgreSQL database." data-tags="ExpressJS,JavaScript,PostgreSQL">
+      <div class="project-card" onclick="openProject(this)" data-content="project-11" 
+		data-images="https://ik.imagekit.io/mbp4i7p96/simak/image24.png?updatedAt=1753168467215,https://ik.imagekit.io/mbp4i7p96/simak/image22.png?updatedAt=1753168464039,https://ik.imagekit.io/mbp4i7p96/simak/image10.png?updatedAt=1753168459094,https://ik.imagekit.io/mbp4i7p96/simak/image2.png?updatedAt=1753168459073,https://ik.imagekit.io/mbp4i7p96/simak/image3.png?updatedAt=1753168458980,https://ik.imagekit.io/mbp4i7p96/simak/image24.png?updatedAt=1753168467215,https://ik.imagekit.io/mbp4i7p96/simak/image23.png?updatedAt=1753168467070,https://ik.imagekit.io/mbp4i7p96/simak/image22.png?updatedAt=1753168464039" 
+		data-title="Staff Management Application SiMAK" 
+		data-tags="ExpressJS,JavaScript,PostgreSQL">
         <img class="project-card-thumb" src="images/staff-management.jpg" alt="Staff Management SiMAK" loading="lazy">
         <div class="project-card-body">
           <h3>Staff Management Application SiMAK</h3>
@@ -601,7 +631,10 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/document-management.jpg" data-title="Document Management App [SiTANDA]" data-description="Web application to manage official incoming and outgoing letters with REST API backend. Includes Android app with push notifications for real-time document tracking. Features document workflow, letter composition, and tracking interface." data-tags="ExpressJS,JavaScript,Java,Android">
+      <div class="project-card" onclick="openProject(this)" data-content="project-12"
+		data-images="https://ik.imagekit.io/mbp4i7p96/sitanda/image11.png?updatedAt=1753167237291,https://ik.imagekit.io/mbp4i7p96/sitanda/image1.png?updatedAt=1753167232620,https://ik.imagekit.io/mbp4i7p96/sitanda/image2.png?updatedAt=1753167232651" 
+		data-title="Document Management App [SiTANDA]" 
+		data-tags="ExpressJS,JavaScript,Java,Android">
         <img class="project-card-thumb" src="images/document-management.jpg" alt="Document Management SiTANDA" loading="lazy">
         <div class="project-card-body">
           <h3>Document Management App [SiTANDA]</h3>
@@ -612,8 +645,11 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/fruit-detector.jpg" data-title="Fruit Detector – AI [MekaVision]" data-description="Fruit counting application using Mask R-CNN instance segmentation. Mobile app allows users to upload tree images; the server processes them and returns accurate fruit count for agricultural yield estimation. Built with Flask backend and Android client." data-tags="Flask,Mask R-CNN,Android,Python">
-        <img class="project-card-thumb" src="images/fruit-detector.jpg" alt="Fruit Detector MekaVision" loading="lazy">
+      <div class="project-card" onclick="openProject(this)"  data-content="project-13"
+		data-images="https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/dashboard.jpg?updatedAt=1752892597609,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree-2.jpg?updatedAt=1752892708871,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-15-32-91_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752892476850,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/tree%20in%20orchard.jpg?updatedAt=1752892745032,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-15-49-41_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752892476527,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/Screenshot_2025-07-17-19-16-58-90_0352e131ded10c3d98df4d7c0aa527bc.jpg?updatedAt=1752893453723,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg?updatedAt=1752892555291,https://ik.imagekit.io/mbp4i7p96/fruit%20detector/dashboard.jpg?updatedAt=1752892597609"
+		data-title="Fruit Detector – AI [MekaVision]"
+		data-tags="Flask,Mask R-CNN,Android,Python">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/fruit%20detector/count%20fruit%20on%20a%20tree.jpg?updatedAt=1752892555291" alt="Fruit Detector MekaVision" loading="lazy">
         <div class="project-card-body">
           <h3>Fruit Detector – AI [MekaVision]</h3>
           <p>Fruit counting app using Mask R-CNN segmentation. Upload tree images; server returns fruit count.</p>
@@ -623,19 +659,13 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/cnn-research.jpg" data-title="Convolutional Neural Network Research" data-description="CNN-based image classification and detection research projects. Explored various convolutional neural network architectures for image recognition tasks including feature extraction, model training, and performance evaluation across different datasets." data-tags="CNN,Python">
-        <img class="project-card-thumb" src="images/cnn-research.jpg" alt="CNN Research" loading="lazy">
-        <div class="project-card-body">
-          <h3>Convolutional Neural Network Research</h3>
-          <p>CNN-based image classification and detection research projects.</p>
-          <div class="tags">
-            <span class="tag">CNN</span><span class="tag">Python</span>
-          </div>
-        </div>
-      </div>
+      
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/wordpress-veriflow.jpg" data-title="WordPress for Veriflow.net" data-description="Custom WordPress theme development with advanced-custom-fields-pro, custom plugins, and marketing platform integration (act-on). Built a fully customized corporate website with responsive design and SEO optimization." data-tags="WordPress,PHP">
-        <img class="project-card-thumb" src="images/wordpress-veriflow.jpg" alt="WordPress Veriflow" loading="lazy">
+      <div class="project-card" onclick="openProject(this)" data-content="project-14"
+		data-images="https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-landing.jpg?updatedAt=1753242768948,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-solutions.jpg?updatedAt=1753242769322,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-landing.jpg?updatedAt=1753242768948,https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-resources.jpg?updatedAt=1753242769288" 
+		data-title="WordPress for Veriflow.net" 
+		data-tags="WordPress,PHP">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/veriflow/web-veriflow-resources.jpg?updatedAt=1753242769288" alt="WordPress Veriflow" loading="lazy">
         <div class="project-card-body">
           <h3>WordPress for Veriflow.net</h3>
           <p>Custom WordPress theme with advanced-custom-fields-pro, custom plugins, and marketing integration.</p>
@@ -645,8 +675,11 @@
         </div>
       </div>
 
-      <div class="project-card" onclick="openProject(this)" data-image="images/cms-projects.jpg" data-title="Various CMS & Web Projects (Vega10)" data-description="Custom Joomla, Drupal, WordPress, Marketo, Hubspot, and Webflow sites for companies like proceranetworks.com, panasas.com, logichub.com, charitieshousing.org, zycada.com, blastwave.io. Includes email templates, web server management, and marketing platform setup." data-tags="Joomla,Drupal,WordPress,Hubspot,Webflow">
-        <img class="project-card-thumb" src="images/cms-projects.jpg" alt="CMS Projects" loading="lazy">
+      <div class="project-card" onclick="openProject(this)" data-content="project-14"
+		data-images="https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_24_AM.png?updatedAt=1753910778193,https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_27_AM.png?updatedAt=1753910862647,https://ik.imagekit.io/mbp4i7p96/panasas/Panasas-High-Performance-Parallel-Storage-for-Big-Data-Applications--07-31-2025_05_26_AM.png?updatedAt=1753914423840" 
+		data-title="Various CMS & Web Projects (Vega10)" 
+		data-tags="Joomla,Drupal,WordPress,Hubspot,Webflow">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/proceranetworks/Procera-Networks-Empowering-Intelligence-07-31-2025_04_24_AM.png?updatedAt=1753910778193" alt="CMS Projects" loading="lazy">
         <div class="project-card-body">
           <h3>Various CMS & Web Projects (Vega10)</h3>
           <p>Custom Joomla, Drupal, WordPress, Marketo, Hubspot, and Webflow sites for various companies.</p>
@@ -849,7 +882,75 @@
 	<li>Development of mobile app to upload the image to REST API and read the detection result</li>
 	</ul>
 </template>
-
+<template id="project-7">
+	<p>Tasks:</p>
+<ul>
+<li>
+<p>Development of algae detector REST API using flask and Yolo v8 segmentation</p>
+</li>
+<li>
+<p>Development of mobile app to login and upload the image to REST API and read the detection result</p>
+</li>
+</ul>
+</template>
+<template id="project-8">
+	<p>Developed Safety Monitoring Dashboard application: User module, Role Management module, Notification module, Vehicle management module, Video Streamer, Fleet management</p>
+</template>
+<template id="project-9">
+	<p>Developed Safety Monitoring Dashboard application: User module, Role Management module, Notification module, Vehicle management module, Video Streamer, Fleet management</p>
+</template>
+<template id="project-10">
+	<p>Tasks:</p>
+	<ul>
+	<li>
+	<p>Developing Spring Boot REST API to generate E-METERAI from PERURI using pool management to handle high traffic on <a href="https://skillacademy.com/">https://skillacademy.com/</a></p>
+	</li>
+	</ul>
+</template>
+<template id="project-11">
+	<p>Developing Staff Management System including: user management module, staff employment module, staff formal education module, functional position module, Staff job position module, staff rank module, staff training, staff certification.</p>
+<p>images: <a href="https://imagekit.io/public/share/mbp4i7p96/3092f974512c28b533ba649acd9f33a37df78a99fa373ac0dcf4e713184b8a1a239cbc0a55149b9b8b418ad688e3ba31d58fca4d01e7ddb693a2a6b2e8c12f8706807583ed13ac6aa23e4593a501f74e">https://imagekit.io/public/share/mbp4i7p96/3092f974512c28b533ba649acd9f33a37df78a99fa373ac0dcf4e713184b8a1a239cbc0a55149b9b8b418ad688e3ba31d58fca4d01e7ddb693a2a6b2e8c12f8706807583ed13ac6aa23e4593a501f74e</a></p>
+<p>documentation:&nbsp;</p>
+<p><a href="https://docs.google.com/document/d/1FprH4sAq2oWqUnzdYpUgLhZ3N-W_d3xg2IiTmatLOlQ/edit?tab=t.0">https://docs.google.com/document/d/1FprH4sAq2oWqUnzdYpUgLhZ3N-W_d3xg2IiTmatLOlQ/edit?tab=t.0</a></p>
+<p>&nbsp;</p>
+</template>
+<template id="project-12">
+	<p>Role: Full Stack developer</p>
+	<p>Tasks:</p>
+	<ul>
+	<li>
+	<p>Developed a Web Application that store and manage all official documents in the form of incoming and outgoing letters</p>
+	</li>
+	<li>
+	<p>Developed a REST API to view the document on Android and send notification to Android app</p>
+	</li>
+	<li>
+	<p>Developed Android App that can view the document and receive notification from server when there is a new document arrived</p>
+	</li>
+	</ul>
+	<p>Images:</p>
+	<p><a href="https://imagekit.io/public/share/mbp4i7p96/3092f974512c28b533ba649acd9f33a37df78a99fa373ac0dcf4e713184b8a1a04d0ed9bcd8a1b15a9ec7fe5e9424232a9615dd059123b00f95dd137639a19dce36ad71c3742d8869b0b723b102aeccb">https://imagekit.io/public/share/mbp4i7p96/3092f974512c28b533ba649acd9f33a37df78a99fa373ac0dcf4e713184b8a1a04d0ed9bcd8a1b15a9ec7fe5e9424232a9615dd059123b00f95dd137639a19dce36ad71c3742d8869b0b723b102aeccb</a></p>
+</template>
+<template id="project-13">
+	<p>Role:&nbsp; Full Stack developer</p>
+	<p>Developed a fruit counting app that can detect the number of fruits by taking a picture of the tree. The operator will take the picture of a tree then the picture will be sent to the server. The server will count the fruit using Mask R-CNN and return the number of fruit in that tree.</p>
+	<p>Tasks:</p>
+	<ul>
+	<li>
+	<p>Development of fruit detector REST API using flask and Mask R-CNN segmentation</p>
+	</li>
+	<li>
+	<p>Development of mobile app to login and upload the image to REST API and read the fruit detection result</p>
+	</li>
+	</ul>
+</template>
+<template id="project-14">
+	<ul>
+	<li>Developed custom Wordpress theme with advanced-custom-fields-pro and subscribe</li>
+	<li>developed custom plugins</li>
+	<li>integrated with marketing platforms such as: act-on</li>
+	</ul>
+</template>
 <!-- end project detail -->
 
 <script>
@@ -934,6 +1035,36 @@
     if (e.key === 'ArrowRight') nextSlide();
 	if (e.key === 'ArrowLeft') prevSlide();
   });
+  
+	const modalImage = document.getElementById('modalImage');
+
+	modalImage.addEventListener('mousemove', function(e) {
+	  if (!this.classList.contains('zoomed')) return;
+
+	  const rect = this.getBoundingClientRect();
+
+	  const x = ((e.clientX - rect.left) / rect.width) * 100;
+	  const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+	  this.style.transformOrigin = `${x}% ${y}%`;
+	});
+
+	const isMobile = window.innerWidth < 768;
+
+	if (!isMobile) {
+	  modalImage.addEventListener('mouseenter', function() {
+		this.classList.add('zoomed');
+	  });
+
+	  modalImage.addEventListener('mouseleave', function() {
+		this.classList.remove('zoomed');
+		this.style.transformOrigin = 'center center';
+	  });
+	  
+	  modalImage.addEventListener('click', function() {
+		this.classList.toggle('zoomed');
+		});
+	}
 </script>
 
 </body>
