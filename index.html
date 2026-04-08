@@ -1,35 +1,940 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aldo Praherda's Portfolio</title>
-    <meta name="description" content="Aldo has over 10 years of experience in software development.
-    Currently working as a full stack developer with extensive
-    background in delivering end-to-end web and mobile
-    applications. Passionate about clean code, scalable architecture,
-    and user-centric solutions. Proficient in frontend frameworks,
-    backend services, cloud deployments, and cross-platform mobile
-    development." />
-    <meta name="author" content="Aldo Praherda" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aldo Praherda - Full Stack Developer Portfolio</title>
+	<meta name="author" content="Aldo Praherda">
+	<meta property="og:title" content="Aldo Praherda - Full Stack Developer">
+	<meta property="og:description" content="Full Stack Developer specializing in scalable systems, AI, and microservices">
+	<meta property="og:type" content="website">
+	<meta name="description" content="Portfolio of Aldo Praherda - Full Stack Developer specializing in React, Python, AI, microservices, and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <meta property="og:title" content="cosmic-astro-forge" />
-    <meta property="og:description" content="Aldo has over 10 years of experience in software development.
-    Currently working as a full stack developer with extensive
-    background in delivering end-to-end web and mobile
-    applications. Passionate about clean code, scalable architecture,
-    and user-centric solutions. Proficient in frontend frameworks,
-    backend services, cloud deployments, and cross-platform mobile
-    development." />
-    <meta property="og:type" content="website" />
+    :root {
+      --bg: #0a0e17;
+      --bg-card: rgba(0, 255, 255, 0.04);
+      --cyan: #00ffff;
+      --cyan-dim: rgba(0, 255, 255, 0.5);
+      --cyan-glow: rgba(0, 255, 255, 0.15);
+      --text: #c0d8e8;
+      --text-bright: #e8f4f8;
+      --text-dim: #6a8a9a;
+      --border: rgba(0, 255, 255, 0.2);
+      --font-mono: 'Share Tech Mono', monospace;
+      --font-heading: 'Orbitron', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(rgba(0,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+    /* ─── Header ─── */
+    header {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(10, 14, 23, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    header .container { display: flex; justify-content: space-between; align-items: center; }
+    .logo {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-shadow: 0 0 20px var(--cyan-glow);
+      letter-spacing: 1px;
+    }
+    nav a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      margin-left: 28px;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--cyan); }
+
+    /* ─── Sections ─── */
+    section { padding: 42px 0; }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 8px;
+      text-shadow: 0 0 30px var(--cyan-glow);
+    }
+    .section-subtitle {
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      margin-bottom: 40px;
+    }
+
+    /* ─── Cards ─── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      border-color: var(--cyan-dim);
+      box-shadow: 0 0 30px rgba(0,255,255,0.06), inset 0 0 30px rgba(0,255,255,0.02);
+    }
+    .card-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .card-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-bright);
+    }
+    .card-meta {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--cyan);
+    }
+    .card-company {
+      color: var(--cyan);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+    .card-location {
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      margin-bottom: 12px;
+    }
+    .card p, .card li {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.8;
+    }
+    .card ul { padding-left: 20px; margin-top: 8px; }
+    .card li { margin-bottom: 4px; }
+
+    /* ─── Tags ─── */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 4px 12px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--cyan);
+      background: rgba(0,255,255,0.05);
+      white-space: nowrap;
+    }
+
+    /* ─── Project Grid ─── */
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .project-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .project-card:hover {
+      border-color: var(--cyan-dim);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(0,255,255,0.08);
+    }
+    .project-card-thumb {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border);
+      object-position: top;
+    }
+    .project-card-body { padding: 20px 24px 24px; }
+    .project-card h3 {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      color: var(--text-bright);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .project-card p {
+      font-size: 0.84rem;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ─── Modal ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal {
+      background: #0d1220;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      max-width: 720px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: modalIn 0.25s ease-out;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.95) translateY(10px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(0,255,255,0.1);
+      border: 1px solid var(--border);
+      color: var(--cyan);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      z-index: 10;
+    }
+    .modal-close:hover { background: rgba(0,255,255,0.2); }
+    .modal-image {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px 12px 0 0;
+    }
+    .modal-body { padding: 28px 32px 32px; }
+    .modal-body h2 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--text-bright);
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    #modalDescription ul{
+		margin-left: 20px;
+	}
+	.modal-body a{
+		color: #fff;
+		text-decoration: underline;
+	}
+    .modal-body .description {
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 0;
+      text-align: center;
+      color: var(--text-dim);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+    .btn-primary {
+	  padding: 10px 18px;
+	  border: 1px solid var(--cyan);
+	  color: var(--bg);
+	  background: var(--cyan);
+	  text-decoration: none;
+	  font-family: var(--font-mono);
+	  font-size: 0.8rem;
+	  border-radius: 4px;
+	}
+
+	.btn-outline {
+	  padding: 10px 18px;
+	  border: 1px solid var(--border);
+	  color: var(--cyan);
+	  text-decoration: none;
+	  font-family: var(--font-mono);
+	  font-size: 0.8rem;
+	  border-radius: 4px;
+	}
+	/*slider*/
+	/* SLIDER */
+.modal-slider {
+  position: relative;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,255,255,0.1);
+  border: 1px solid var(--border);
+  color: var(--cyan);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.4rem;
+  z-index: 5;
+}
+
+.slider-btn:hover {
+  background: rgba(0,255,255,0.25);
+}
+
+.slider-btn.prev { left: 12px; }
+.slider-btn.next { right: 12px; }
+
+/* THUMBNAILS */
+.thumbnail-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px;
+}
+
+.thumbnail-strip::-webkit-scrollbar {
+  height: 6px;
+}
+.thumbnail-strip::-webkit-scrollbar-thumb {
+  background: rgba(0,255,255,0.2);
+}
+
+.thumbnail {
+  width: 70px;
+  height: 50px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.thumbnail.active {
+  border-color: var(--cyan);
+  opacity: 1;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+}
+
+.image-counter {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+    /* ─── Responsive ─── */
+    @media (max-width: 640px) {
+      .logo { font-size: 1.1rem; }
+      nav a { margin-left: 16px; font-size: 0.78rem; }
+      .section-title { font-size: 1.3rem; }
+      .project-grid { grid-template-columns: 1fr; }
+      .card { padding: 20px; }
+      .modal-body { padding: 20px; }
+      .modal-body h2 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">Aldo Praherda</div>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════ PROJECT DETAIL MODAL ═══════════════ -->
+<div class="modal-overlay" id="projectModal" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+
     
 
-    
-    <script type="module" crossorigin src="/assets/index-CLnVp_us.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CTXmGN8U.css">
-  </head>
+    <div class="modal-body">
+      <h2 id="modalTitle"></h2>
 
-  <body>
-    <div id="root"></div>
-  </body>
+      <div id="imageCounter" class="image-counter"></div>
+
+      <div class="description" id="modalDescription"></div>
+      <div class="tags" id="modalTags"></div>
+    </div>
+    <!-- SLIDER -->
+    <div class="modal-slider" id="slider">
+      <button class="slider-btn prev" onclick="prevSlide()">‹</button>
+
+      <img class="modal-image" id="modalImage" src="" alt="" loading="lazy">
+
+      <button class="slider-btn next" onclick="nextSlide()">›</button>
+    </div>
+
+    <!-- THUMBNAILS -->
+    <div class="thumbnail-strip" id="thumbnailStrip"></div>
+  </div>
+</div>
+
+<!-- ═══════════════ END PROJECT DETAIL MODAL ═══════════════ -->
+
+
+
+<section id="hero">
+  <div class="container" style="padding-top: 60px; padding-bottom: 60px;">
+    <h1 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-bright); margin-bottom: 16px;">
+      Full Stack Developer & AI Engineer
+    </h1>
+    
+    <p style="max-width: 600px; color: var(--text-dim); margin-bottom: 24px;">
+      I build scalable systems, AI-powered applications, and high-performance microservices. 
+      10+ years experience delivering production-ready software for enterprise and startups.
+    </p>
+
+    <div style="display:flex; gap:12px;">
+      <a href="#projects" class="btn-primary">View Projects</a>
+      <a href="mailto:your@email.com" class="btn-outline">Contact Me</a>
+    </div>
+  </div>
+</section>
+	<div class="container">
+		<div class="tags">
+		  <span class="tag">React</span>
+		  <span class="tag">Node.js</span>
+		  <span class="tag">Go</span>
+		  <span class="tag">Python</span>
+		  <span class="tag">Microservices</span>
+		  <span class="tag">AI / YOLO</span>
+		  <span class="tag">PostgreSQL</span>
+		</div>
+	</div>
+
+<!-- ═══════════════ FEATURED PROJECTS ═══════════════ -->
+<section id="projects">
+  <div class="container">
+    <h1 class="section-title">Featured Projects</h1>
+    <p class="section-subtitle">Selected Projects — Production systems &amp; AI applications</p>
+
+    <div class="project-grid">
+
+      <div class="project-card" onclick="openProject(this)" data-content="project-1" 
+		data-images="https://ik.imagekit.io/mbp4i7p96/product_1750810332951_R2FvtuA6a.jpg,https://ik.imagekit.io/mbp4i7p96/siakad/isi-irs.png,https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png,https://ik.imagekit.io/mbp4i7p96/siakad/FireShot%20Capture%201289%20-%20Sistem%20Informasi%20Akademik%20-%20_siakad.uinsatu.ac.id_.png,https://ik.imagekit.io/mbp4i7p96/siakad/kalender-akademik.png,https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png" 
+		data-title="University Management System Microservices"  
+		data-tags="React,Go,.NET Core,PHP Symfony,RabbitMQ,PostgreSQL">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/siakad/Sistem-Informasi-Akademik-07-04-2025_07_10_AM.png?updatedAt=1751588193814" alt="University Management System" loading="lazy">
+        <div class="project-card-body">
+          <h3>University Management System Microservices</h3>
+          <p>Developed university management system microservices using PHP REST API and ReactJS handling thousands of active students.</p>
+          <div class="tags">
+            <span class="tag">React</span><span class="tag">Go</span><span class="tag">.NET Core</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-content="project-2" 
+		data-images="https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos1.png?updatedAt=1753328369314,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos2.png?updatedAt=1753328369353,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-products.png?updatedAt=1753328369218https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-analytics.png?updatedAt=1753328369166,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-settings.png?updatedAt=1753328369140,https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos-orders.png?updatedAt=1753328369174" 
+		data-title="TokoPOS – Mobile Point of Sale System" 		
+		data-tags="React Native,Express JS,TypeScript,Zustand">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/pos%20toko/react-pos1.png" alt="TokoPOS" loading="lazy">
+        <div class="project-card-body">
+          <h3>TokoPOS – Mobile Point of Sale System</h3>
+          <p>Mobile POS system built with React Native and Node.js backend.</p>
+          <div class="tags">
+            <span class="tag">React Native</span><span class="tag">Express JS</span><span class="tag">TypeScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-content="project-3" 
+		data-images="https://ik.imagekit.io/mbp4i7p96/apos/angular1.png" 
+		data-title="POS System – Full Stack (Spring Boot + Angular)" 
+		data-tags="Angular,Java,Spring Boot,Spring Data JPA">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/apos/angular1.png" alt="POS System" loading="lazy">
+        <div class="project-card-body">
+          <h3>POS System – Full Stack (Spring Boot + Angular)</h3>
+          <p>Full-stack point of sale system with Spring Boot backend and Angular frontend.</p>
+          <div class="tags">
+            <span class="tag">Angular</span><span class="tag">Java</span><span class="tag">Spring Boot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-content="project-4" 
+		data-images="https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria2.png,https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria1.png?updatedAt=1753320739524" 
+		data-title="Bacteria Detector – AI Application" 
+		data-tags="Python,YOLO,Go,Flask">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/bacteria%20detector/bacteria2.png" alt="Bacteria Detector" loading="lazy">
+        <div class="project-card-body">
+          <h3>Bacteria Detector – AI Application</h3>
+          <p>Bacteria detector REST API using Flask and YOLOv8. Mobile app to upload images and read detection results.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">Go</span><span class="tag">Flask</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-content="project-5" 
+		data-images="images/corn-moisture.jpg" 
+		data-title="Corn Moisture Detector – IoT + AI" 
+		data-tags="ESP32,Flutter,AS7265X,C">
+        <img class="project-card-thumb" src="images/corn-moisture.jpg" alt="Corn Moisture Detector" loading="lazy">
+        <div class="project-card-body">
+          <h3>Corn Moisture Detector – IoT + AI</h3>
+          <p>ESP32 module with AS7265X sensor to detect corn moisture. Mobile app reads data via Bluetooth.</p>
+          <div class="tags">
+            <span class="tag">ESP32</span><span class="tag">Flutter</span><span class="tag">AS7265X</span><span class="tag">C</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-content="project-6" 
+		data-images="https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-12-43-31_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072793,https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-13-19-73_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072783,https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-13-28-15_e760499b0a8a48964d5ae830994058f2.jpg?updatedAt=1752893072717" 
+		data-title="Breast Cancer Detector – AI Application" 		
+		data-tags="Flask,Flutter,OpenCV,Dart">
+        <img class="project-card-thumb" src="https://ik.imagekit.io/mbp4i7p96/breast%20cancer/Screenshot_2025-07-17-19-12-43-31_e760499b0a8a48964d5ae830994058f2.jpg" alt="Breast Cancer Detector" loading="lazy">
+        <div class="project-card-body">
+          <h3>Breast Cancer Detector – AI Application</h3>
+          <p>Breast cancer detector REST API from medical images using Flask and YOLOv8 with mobile app.</p>
+          <div class="tags">
+            <span class="tag">Flask</span><span class="tag">Flutter</span><span class="tag">OpenCV</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/algae-detector.jpg" data-title="Algae Detector – AI Application" data-description="Algae detector REST API using Flask and YOLOv8 instance segmentation. Android Kotlin mobile app allows researchers to capture and upload water sample images for automated algae identification and classification." data-tags="Flask,Android Kotlin,Python,OpenCV">
+        <img class="project-card-thumb" src="images/algae-detector.jpg" alt="Algae Detector" loading="lazy">
+        <div class="project-card-body">
+          <h3>Algae Detector – AI Application</h3>
+          <p>Algae detector REST API using Flask and YOLOv8 segmentation with Android Kotlin mobile app.</p>
+          <div class="tags">
+            <span class="tag">Flask</span><span class="tag">Android Kotlin</span><span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/safety-monitoring.jpg" data-title="Safety Monitoring Dashboard" data-description="Comprehensive safety monitoring dashboard featuring user module, role management, real-time notifications, vehicle management, live video streamer integration, and fleet management. Built with ReactJS frontend and Django REST backend with Material UI components." data-tags="ReactJS,Django REST,MUI">
+        <img class="project-card-thumb" src="images/safety-monitoring.jpg" alt="Safety Monitoring Dashboard" loading="lazy">
+        <div class="project-card-body">
+          <h3>Safety Monitoring Dashboard</h3>
+          <p>Dashboard with user module, role management, notifications, vehicle management, and fleet management.</p>
+          <div class="tags">
+            <span class="tag">ReactJS</span><span class="tag">Django REST</span><span class="tag">MUI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/machine-dashboard.jpg" data-title="Machine Dashboard Application" data-description="Industrial machine monitoring dashboard with user management, machine profiles, sensor data visualization, performance metrics, and real-time alert modules. Built with ReactJS and Django REST framework." data-tags="ReactJS,Django REST">
+        <img class="project-card-thumb" src="images/machine-dashboard.jpg" alt="Machine Dashboard" loading="lazy">
+        <div class="project-card-body">
+          <h3>Machine Dashboard Application</h3>
+          <p>Machine dashboard with user management, machine profiles, and alert modules.</p>
+          <div class="tags">
+            <span class="tag">ReactJS</span><span class="tag">Django REST</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/e-meterai.jpg" data-title="E-METERAI for Skill Academy" data-description="Digital stamp (e-meterai) system development for Skill Academy platform by Ruangguru. Handles document verification, digital seal application, and certificate management with secure stamp validation. Built with Spring Boot and PostgreSQL." data-tags="Spring Boot,Java,PostgreSQL">
+        <img class="project-card-thumb" src="images/e-meterai.jpg" alt="E-METERAI" loading="lazy">
+        <div class="project-card-body">
+          <h3>E-METERAI for Skill Academy</h3>
+          <p>Digital stamp (e-meterai) system development for Skill Academy platform.</p>
+          <div class="tags">
+            <span class="tag">Spring Boot</span><span class="tag">Java</span><span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/staff-management.jpg" data-title="Staff Management Application SiMAK" data-description="Comprehensive staff management system covering employment records, education history, functional positions, rank management, training tracking, and certification modules. Built with ExpressJS backend and PostgreSQL database." data-tags="ExpressJS,JavaScript,PostgreSQL">
+        <img class="project-card-thumb" src="images/staff-management.jpg" alt="Staff Management SiMAK" loading="lazy">
+        <div class="project-card-body">
+          <h3>Staff Management Application SiMAK</h3>
+          <p>Staff management system: employment, education, functional positions, rank, training, and certification.</p>
+          <div class="tags">
+            <span class="tag">ExpressJS</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/document-management.jpg" data-title="Document Management App [SiTANDA]" data-description="Web application to manage official incoming and outgoing letters with REST API backend. Includes Android app with push notifications for real-time document tracking. Features document workflow, letter composition, and tracking interface." data-tags="ExpressJS,JavaScript,Java,Android">
+        <img class="project-card-thumb" src="images/document-management.jpg" alt="Document Management SiTANDA" loading="lazy">
+        <div class="project-card-body">
+          <h3>Document Management App [SiTANDA]</h3>
+          <p>Web app to manage official incoming/outgoing letters with REST API and Android app with push notifications.</p>
+          <div class="tags">
+            <span class="tag">ExpressJS</span><span class="tag">JavaScript</span><span class="tag">Android</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/fruit-detector.jpg" data-title="Fruit Detector – AI [MekaVision]" data-description="Fruit counting application using Mask R-CNN instance segmentation. Mobile app allows users to upload tree images; the server processes them and returns accurate fruit count for agricultural yield estimation. Built with Flask backend and Android client." data-tags="Flask,Mask R-CNN,Android,Python">
+        <img class="project-card-thumb" src="images/fruit-detector.jpg" alt="Fruit Detector MekaVision" loading="lazy">
+        <div class="project-card-body">
+          <h3>Fruit Detector – AI [MekaVision]</h3>
+          <p>Fruit counting app using Mask R-CNN segmentation. Upload tree images; server returns fruit count.</p>
+          <div class="tags">
+            <span class="tag">Flask</span><span class="tag">Mask R-CNN</span><span class="tag">Android</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/cnn-research.jpg" data-title="Convolutional Neural Network Research" data-description="CNN-based image classification and detection research projects. Explored various convolutional neural network architectures for image recognition tasks including feature extraction, model training, and performance evaluation across different datasets." data-tags="CNN,Python">
+        <img class="project-card-thumb" src="images/cnn-research.jpg" alt="CNN Research" loading="lazy">
+        <div class="project-card-body">
+          <h3>Convolutional Neural Network Research</h3>
+          <p>CNN-based image classification and detection research projects.</p>
+          <div class="tags">
+            <span class="tag">CNN</span><span class="tag">Python</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/wordpress-veriflow.jpg" data-title="WordPress for Veriflow.net" data-description="Custom WordPress theme development with advanced-custom-fields-pro, custom plugins, and marketing platform integration (act-on). Built a fully customized corporate website with responsive design and SEO optimization." data-tags="WordPress,PHP">
+        <img class="project-card-thumb" src="images/wordpress-veriflow.jpg" alt="WordPress Veriflow" loading="lazy">
+        <div class="project-card-body">
+          <h3>WordPress for Veriflow.net</h3>
+          <p>Custom WordPress theme with advanced-custom-fields-pro, custom plugins, and marketing integration.</p>
+          <div class="tags">
+            <span class="tag">WordPress</span><span class="tag">PHP</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card" onclick="openProject(this)" data-image="images/cms-projects.jpg" data-title="Various CMS & Web Projects (Vega10)" data-description="Custom Joomla, Drupal, WordPress, Marketo, Hubspot, and Webflow sites for companies like proceranetworks.com, panasas.com, logichub.com, charitieshousing.org, zycada.com, blastwave.io. Includes email templates, web server management, and marketing platform setup." data-tags="Joomla,Drupal,WordPress,Hubspot,Webflow">
+        <img class="project-card-thumb" src="images/cms-projects.jpg" alt="CMS Projects" loading="lazy">
+        <div class="project-card-body">
+          <h3>Various CMS & Web Projects (Vega10)</h3>
+          <p>Custom Joomla, Drupal, WordPress, Marketo, Hubspot, and Webflow sites for various companies.</p>
+          <div class="tags">
+            <span class="tag">Joomla</span><span class="tag">Drupal</span><span class="tag">WordPress</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ WORK EXPERIENCE ═══════════════ -->
+<section id="experience">
+  <div class="container">
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-subtitle">Professional journey // 5 positions</p>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Part Time Full Stack Developer</div>
+          <div class="card-company">uinsatu.ac.id</div>
+        </div>
+        <div class="card-meta">May 2024 – Present</div>
+      </div>
+      <ul>
+        <li>Led development of scalable university management system serving thousands of students</li>
+        <li>Transitioned from monolithic Laravel to microservices (PHP Silex REST + ReactJS)</li>
+        <li>Implemented RabbitMQ for async processing and high-traffic handling</li>
+        <li>Migrated from MySQL to PostgreSQL per microservice</li>
+        <li>Built PDDIKTI exporter/importer using Go (Iris framework)</li>
+        <li>Class scheduling system using Genetic Algorithm in .NET Core</li>
+        <li>Integrated JasperReports and Supervisor for monitoring</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">PHP Symfony</span><span class="tag">ReactJS</span><span class="tag">Go</span><span class="tag">C#</span><span class="tag">.NET Core</span><span class="tag">RabbitMQ</span><span class="tag">PostgreSQL</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Full Stack Web Developer</div>
+          <div class="card-company">Groundup.ai</div>
+        </div>
+        <div class="card-meta">Dec 2022 – Apr 2023</div>
+      </div>
+      <ul>
+        <li>Developed Safety Monitoring Dashboard: user, role management, notifications, vehicle management, video streamer, fleet management</li>
+        <li>Developed Machine Dashboard: user management, machine profiles, alerts</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Express JS</span><span class="tag">React JS</span><span class="tag">MUI</span><span class="tag">Django REST</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Freelance AI Developer</div>
+          <div class="card-company">Mekavision – Brawijaya University</div>
+          <div class="card-location">East Java, Indonesia</div>
+        </div>
+        <div class="card-meta">Aug 2021 – Present</div>
+      </div>
+      <ul>
+        <li>Bacteria detection platform combining AI, mobile interfaces, and RESTful services</li>
+        <li>Breast cancer detection solution with computer vision and deep learning</li>
+        <li>Corn moisture detector using ESP32 + AS7265X sensor with mobile app</li>
+        <li>Algae detection with YOLOv8 segmentation</li>
+        <li>Fruit counting system using Mask R-CNN for agricultural yield estimation</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Python</span><span class="tag">YOLO</span><span class="tag">Flask</span><span class="tag">Flutter</span><span class="tag">ESP32</span><span class="tag">OpenCV</span><span class="tag">Mask R-CNN</span><span class="tag">Android Kotlin</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Freelance Full Stack Developer</div>
+          <div class="card-company">Vega10</div>
+        </div>
+        <div class="card-meta">Aug 2012 – Present</div>
+      </div>
+      <ul>
+        <li>Custom Joomla website for proceranetworks.com with email & press release scheduler</li>
+        <li>Custom Drupal sites for proceranetworks.com, panasas.com, logichub.com</li>
+        <li>Custom WordPress themes for veriflow.net, charitieshousing.org, zycada.com, blastwave.io</li>
+        <li>Marketo email templates, Hubspot websites, Webflow sites</li>
+        <li>Web server management: installation, maintenance, and setup</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">Joomla</span><span class="tag">Drupal</span><span class="tag">WordPress</span><span class="tag">Marketo</span><span class="tag">Hubspot</span><span class="tag">Webflow</span><span class="tag">PHP</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Web Developer</div>
+          <div class="card-company">Magicsoft-asia</div>
+          <div class="card-location">Singapore</div>
+        </div>
+        <div class="card-meta">Aug 2008 – Jul 2012</div>
+      </div>
+      <ul>
+        <li>Flight training management software using ASP.NET WebForm</li>
+        <li>Clinic management system using WinForm + REST API</li>
+        <li>Managed email server (SmarterMail) and web hosting (Plesk)</li>
+        <li>Android-Omron device integration</li>
+        <li>Managed websites on Amazon EC2</li>
+        <li>Websites using Joomla, WordPress, and custom PHP</li>
+      </ul>
+      <div class="tags">
+        <span class="tag">C#</span><span class="tag">WinForm</span><span class="tag">ASP.NET</span><span class="tag">Python</span><span class="tag">PHP</span><span class="tag">AWS EC2</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">Let’s build something together</p>
+
+    <div class="card">
+      <p>Email: aldopraherda@gmail.com</p>
+      <p>LinkedIn: https://www.linkedin.com/in/aldo-praherda-8014b639/</p>
+      <p>GitHub: https://github.com/araneta</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Aldo Praherda. All rights reserved.</p>
+  </div>
+</footer>
+<!-- project detail -->
+<template id="project-1">
+  <p>Developed university management system&nbsp;microservices using PHP REST API and ReactJS that handle thousand active students</p>
+	<p><strong>Tasks:</strong></p>
+	<ul>
+	<li>Development of&nbsp;microservices: student academic module, staff module, payment module, graduation module, survey module, scholarship module -​ Improving performance by</li>
+	<li>Migrating application from&nbsp;Laravel to microservices -​ Using RabbitMQ to handle heavy traffic</li>
+	<li>Migrating DB from mysql to postgres for each microservice -​ Development of PDDIKTI exporter and importer using Iris Go</li>
+	<li>Development of class scheduling application using Genetic Algorithm and .NET core</li>
+	</ul>
+	<p>Live Site: https://siakad.uinsatu.ac.id/</p>
+	<p>Technologies: PHP Symfony, ReactJS, Java Script, Go, C#, .NET Core, JasperReport, RabbitMQ, Supervisor, Postgresql</p>
+</template>
+<template id="project-2">
+	<p>Built a modern, cross-platform mobile Point of Sale (POS) system from scratch, combining powerful backend services with a sleek mobile interface to streamline in-store transactions and inventory management.</p>
+<p>●​ Frontend (React Native + Expo) <br>○​ Developed a mobile-first POS interface with React Native (Expo) for both Web and Android <br>○​ Implemented barcode scanning using the device camera via expo-barcode-scanner and supported manual barcode input fallback. <br>○​ Built dynamic cart management and real-time order updates using Zustand state management. <br>○​ Designed intuitive UI/UX with React Navigation, Vector Icons, Toast Messages, and ChartKit for analytics. <br>○​ Implemented secure authentication using Clerk for React Native and Expo Secure Store. <br>●​ Backend (Node.js + TypeScript + Express) <br>○​ Created RESTful APIs using TypeScript, Express, and Drizzle ORM for PostgreSQL. <br>○​ Used clerk/express for secure API access and user management Technologies: Express JS, React Native, Expo, TypeScript, Clerk, Zustand, neon.tech, Stripe, React Navigation</p>
+<p>Github: <a href="https://github.com/araneta/postoko/">https://github.com/araneta/postoko/</a></p>
+</template>
+<template id="project-3">
+	<ul>
+<li>Built a full-featured Point of Sale (POS) system with a Spring Boot backend and Angular frontend. The backend, developed in Java 17, leverages Spring Boot 3.1, Spring Security with JWT for authentication, and Spring Data JPA with MySQL for database operations. RESTful APIs are documented using SpringDoc OpenAPI and automatically consumed by the Angular frontend via OpenAPI Generator, ensuring type-safe API integration.&nbsp;</li>
+<li>The Angular app, built with Angular 17, incorporates advanced UI components using PrimeNG, ag-Grid, and Bootstrap 5, with secure JWT-based login powered by @auth0/angular-jwt. This project showcases end-to-end full stack integration, automated client code generation, and modern architecture practices for scalable, maintainable retail solutions.</li>
+</ul>
+<p>Technologies: Java 17, Spring Boot 3.1, Spring Security (JWT), Spring Data JPA, RESTful APIs, OpenAPI (Swagger), Angular 17, TypeScript, HTML5, CSS3, Bootstrap 5, PrimeNG, ag-Grid, MySQL, JPA/Hibernate, Lombok, OpenAPI Generator, RxJS, JWT, Maven</p>
+<p>Github: <a href="https://github.com/araneta/APOS">https://github.com/araneta/APOS</a></p>
+</template>
+<template id="project-4">
+	<p>Tasks:</p>
+	<ul>
+	<li>
+	<p>Development of bacteria detector REST API using flask and Yolo v8</p>
+	</li>
+	<li>
+	<p>Development of mobile app to login and upload the image to REST API and read the detection result</p>
+	</li>
+	<li>
+	<p>Development of user module REST API</p>
+	</li>
+	</ul>
+</template>
+<template id="project-5">
+	<p>Tasks:</p>
+<ul>
+<li>
+<p>Development of ESP module using AS7265X sensor to detect the corn moisture</p>
+</li>
+<li>
+<p>Development of mobile app to read the data from ESP module using bluetooth then upload the result to REST API</p>
+</li>
+<li>
+<p>Development of user module REST API to save the corn moisture data</p>
+</li>
+</ul>
+</template>
+
+<template id="project-6">
+	<ul>
+	<li>Development of breast cancer detector REST API from image using flask and&nbsp;Yolo v8</li>
+	<li>Development of mobile app to upload the image to REST API and read the detection result</li>
+	</ul>
+</template>
+
+<!-- end project detail -->
+
+<script>
+	let currentImages = [];
+	let currentIndex = 0;
+
+	let startX = 0;
+	let endX = 0;
+	
+	function updateImage() {
+	  const img = document.getElementById('modalImage');
+	  img.src = currentImages[currentIndex];
+
+	  document.getElementById('imageCounter').textContent =
+		(currentIndex + 1) + " / " + currentImages.length;
+
+	  updateActiveThumbnail();
+	}
+
+	function nextSlide() {
+	  currentIndex = (currentIndex + 1) % currentImages.length;
+	  updateImage();
+	}
+
+	function prevSlide() {
+	  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+	  updateImage();
+	}
+
+	function renderThumbnails() {
+	  const strip = document.getElementById('thumbnailStrip');
+
+	  strip.innerHTML = currentImages.map((src, index) => `
+		<img 
+		  src="${src}" 
+		  class="thumbnail ${index === 0 ? 'active' : ''}" 
+		  onclick="goToSlide(${index})"
+		  loading="lazy"
+		>
+	  `).join('');
+	}
+
+	function updateActiveThumbnail() {
+	  document.querySelectorAll('.thumbnail').forEach((el, i) => {
+		el.classList.toggle('active', i === currentIndex);
+	  });
+	}
+
+	function goToSlide(index) {
+	  currentIndex = index;
+	  updateImage();
+	}
+  function openProject(card) {
+	  currentImages = card.dataset.images.split(',');
+	  currentIndex = 0;
+
+	  renderThumbnails();
+	  updateImage();
+	  
+    
+    document.getElementById('modalTitle').textContent = card.dataset.title;
+    const contentId = card.dataset.content;
+    const tpl = document.getElementById(contentId);
+	document.getElementById('modalDescription').innerHTML = tpl.innerHTML;
+    
+    const tagsContainer = document.getElementById('modalTags');
+    tagsContainer.innerHTML = card.dataset.tags.split(',').map(t => 
+      '<span class="tag">' + t.trim() + '</span>'
+    ).join('');
+    
+    document.getElementById('projectModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('projectModal').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowRight') nextSlide();
+	if (e.key === 'ArrowLeft') prevSlide();
+  });
+</script>
+
+</body>
 </html>
