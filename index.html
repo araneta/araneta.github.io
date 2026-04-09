@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aldo Praherda - Full Stack Developer Portfolio</title>
-	<meta name="author" content="Aldo Praherda">
-	<meta property="og:title" content="Aldo Praherda - Full Stack Developer">
+  <title>Aldo Septyan Praherda - Full Stack Developer Portfolio</title>
+	<meta name="author" content="Aldo Septyan Praherda">
+	<meta property="og:title" content="Aldo Septyan Praherda - Full Stack Developer">
 	<meta property="og:description" content="Full Stack Developer specializing in scalable systems, AI, and microservices">
 	<meta property="og:type" content="website">
-	<meta name="description" content="Portfolio of Aldo Praherda - Full Stack Developer specializing in React, Python, AI, microservices, and more.">
+	<meta name="description" content="Portfolio of Aldo Septyan Praherda - Full Stack Developer specializing in React, Python, AI, microservices, and more.">
   
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,6 +38,9 @@
       line-height: 1.7;
       min-height: 100vh;
     }
+    body a{
+		color: #ffffff;
+	}
 
     body::before {
       content: '';
@@ -98,7 +101,53 @@
       font-size: 0.85rem;
       margin-bottom: 40px;
     }
+	/*hero*/
+	.hero-grid {
+	  display: grid;
+	  grid-template-columns: 1.2fr 1fr;
+	  gap: 40px;
+	  align-items: center;
+	}
 
+	/* 📱 MOBILE */
+	@media (max-width: 768px) {
+	  .hero-grid {
+		grid-template-columns: 1fr;
+		text-align: center;
+	  }
+
+	  .hero-media {
+		order: -1; /* 👈 move photo to top */
+	  }
+
+	  .profile-photo {
+		margin: 0 auto;
+		max-width: 180px;
+	  }
+
+	  .hero-text h1 {
+		font-size: 1.6rem;
+	  }
+
+	  .hero-text h2 {
+		font-size: 0.9rem;
+	  }
+
+	  .hero-actions {
+		justify-content: center;
+		flex-wrap: wrap;
+	  }
+	}
+	.profile-photo {
+	  
+	  height: 180px;
+	  max-width: 260px;
+	  border-radius: 12px;
+	  border: 1px solid var(--border);
+	  box-shadow: 0 0 40px rgba(0,255,255,0.08);
+	}
+
+	
     /* ─── Cards ─── */
     .card {
       background: var(--bg-card);
@@ -400,7 +449,7 @@
 
 <header>
   <div class="container">
-    <div class="logo">Aldo Praherda</div>
+    <div class="logo">Aldo Septyan Praherda</div>
     <nav>
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
@@ -439,25 +488,35 @@
 
 	<!-- ═══════════════ END PROJECT DETAIL MODAL ═══════════════ -->
 
-
-
 	<section id="hero">
-	  <div class="container" style="padding-top: 60px; padding-bottom: 60px;">
-		<h1 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-bright); margin-bottom: 16px;">
-		  Full Stack Developer & AI Engineer
-		</h1>
-		
-		<p style="max-width: 600px; color: var(--text-dim); margin-bottom: 24px;">
-		  I build scalable systems, AI-powered applications, and high-performance microservices. 
-		  10+ years experience delivering production-ready software for enterprise and startups.
-		</p>
+	  <div class="container hero-grid">
 
-		<div style="display:flex; gap:12px;">
-		  <a href="#projects" class="btn-primary">View Projects</a>
-		  <a href="mailto:aldopraherda@gmail.com" class="btn-outline">Contact Me</a>
+		<!-- LEFT -->
+		<div class="hero-text">
+		  <h1 style="font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-bright); margin-bottom: 16px;">
+			  Full Stack Developer & AI Engineer
+			</h1>
+			
+			<p style="max-width: 600px; color: var(--text-dim); margin-bottom: 24px;">
+			  I build scalable systems, AI-powered applications, and high-performance microservices. 
+			  10+ years experience delivering production-ready software for enterprise and startups.
+			</p>
+
+			<div style="display:flex; gap:12px;">
+			  <a href="#projects" class="btn-primary">View Projects</a>
+			  <a href="mailto:aldopraherda@gmail.com" class="btn-outline">Contact Me</a>
+			</div>
 		</div>
+
+		<!-- RIGHT -->
+		<div class="hero-media">
+		  <img src="images/profile.webp" alt="Aldo Septyan Praherda" class="profile-photo">
+		</div>
+
 	  </div>
 	</section>
+
+	
 		<div class="container">
 			<div class="tags">
 			  <span class="tag">React</span>
@@ -469,6 +528,9 @@
 			  <span class="tag">PostgreSQL</span>
 			</div>
 		</div>
+		
+		
+		
 
 	<!-- ═══════════════ FEATURED PROJECTS ═══════════════ -->
 	<section id="projects">
@@ -693,7 +755,89 @@
 		</div>
 	  </div>
 	</section>
+	
+	
+	<section id="skills">
+	  <div class="container">
+		<h2 class="section-title">Skills & Education</h2>
+		<p class="section-subtitle">Technical expertise & background</p>
 
+		<!-- EDUCATION -->
+		<div class="card">
+		  <div class="card-header">
+			<div>
+			  <div class="card-title">Bachelor of Computer Science</div>
+			  <div class="card-company">Brawijaya University, Malang, Indonesia</div>
+			</div>
+			<div class="card-meta">Sept 2003 – Apr 2008</div>
+		  </div>
+		</div>
+
+		<!-- TECHNICAL SKILLS -->
+		<div class="card">
+		  <div class="card-title">Technical Skills</div>
+
+		  <div class="tags">
+			<span class="tag">Java</span>
+			<span class="tag">Go</span>
+			<span class="tag">JavaScript</span>
+			<span class="tag">TypeScript</span>
+			<span class="tag">PHP</span>
+			<span class="tag">Python</span>
+			<span class="tag">C#</span>
+			<span class="tag">C++</span>
+			<span class="tag">Dart</span>
+			<span class="tag">SQL</span>
+			<span class="tag">React</span>
+			<span class="tag">Angular</span>
+			<span class="tag">Node.js</span>
+			<span class="tag">Spring Boot</span>
+			<span class="tag">.NET Core</span>
+			<span class="tag">Django</span>
+			<span class="tag">Flutter</span>
+			<span class="tag">React Native</span>
+			<span class="tag">PostgreSQL</span>
+			<span class="tag">MySQL</span>
+			<span class="tag">MongoDB</span>
+			<span class="tag">Docker</span>
+			<span class="tag">AWS</span>
+			<span class="tag">Nginx</span>
+			<span class="tag">YOLOv8</span>
+			<span class="tag">OpenCV</span>
+			<span class="tag">TensorFlow</span>
+		  </div>
+		</div>
+
+		<!-- SKILL CATEGORIES -->
+		<div class="card">
+		  <div class="card-title">Expertise</div>
+
+		  <ul>
+			<li><strong>Backend:</strong> Java Spring Boot, Golang, Express, Node.js, Django, .NET Core</li>
+			<li><strong>Frontend:</strong> React JS, Angular, Bootstrap, jQuery, TypeScript</li>
+			<li><strong>Mobile:</strong> React Native, Android (Java), Flutter</li>
+			<li><strong>Database:</strong> PostgreSQL, MSSQL Server, Oracle, MySQL, MongoDB</li>
+			<li><strong>AI/ML:</strong> CNN, YOLOv8, OpenCV, TensorFlow, Keras</li>
+			<li><strong>DevOps:</strong> Docker, AWS, Nginx, CI/CD</li>
+			<li><strong>CMS:</strong> Joomla, WordPress, Drupal</li>
+		  </ul>
+		</div>
+
+		<!-- CERTIFICATES -->
+		<div class="card">
+		  <div class="card-title">Certificates</div>
+
+		  <ul>
+						<li><a href="https://www.udemy.com/certificate/UC-e0153282-965e-4068-8e57-06e46c291bec/" target="_blank">Angular & Node JS - MEAN Stack (2025)</a></li>
+						<li><a href="https://www.coursera.org/account/accomplishments/certificate/6DBGPHNVU5AB" target="_blank">Sequence Models (2020)</a></li>
+						<li><a href="https://www.coursera.org/account/accomplishments/certificate/BG5MUQLK4GP9" target="_blank">CNN (2020)</a></li>
+						<li><a href="https://www.coursera.org/account/accomplishments/certificate/FYBZXYKZS9FN" target="_blank">Improving Deep Neural Networks (2020)</a></li>
+						<li><a href="https://www.coursera.org/account/accomplishments/certificate/NBT26KZHXF" target="_blank">Android Programming (2014)</a></li>
+					  </ul>
+		</div>
+
+	  </div>
+	</section>
 	<!-- ═══════════════ WORK EXPERIENCE ═══════════════ -->
 	<section id="experience">
 	  <div class="container">
@@ -820,7 +964,7 @@
 
 <footer>
   <div class="container">
-    <p>&copy; 2024 Aldo Praherda. All rights reserved.</p>
+    <p>&copy; 2026 Aldo Septyan Praherda. All rights reserved.</p>
   </div>
 </footer>
 
