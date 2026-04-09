@@ -486,6 +486,14 @@
   transform: scale(2); /* adjust zoom level */
   cursor: zoom-out;
 }
+.lazy-img {
+  filter: blur(10px);
+  transition: filter 0.4s;
+}
+
+.lazy-img.loaded {
+  filter: blur(0);
+}
     /* ─── Responsive ─── */
     @media (max-width: 640px) {
       .logo { font-size: 1.1rem; }
@@ -496,6 +504,8 @@
       .modal-body { padding: 20px; }
       .modal-body h2 { font-size: 1rem; }
     }
+    
+    
   </style>
 </head>
 <body>
@@ -573,7 +583,7 @@
 
 		<!-- RIGHT -->
 		<div class="hero-media">
-		  <img src="images/profile.webp" alt="Aldo Septyan Praherda" class="profile-photo">
+		  <img src="images/profile.webp" alt="Aldo Septyan Praherda" class="profile-photo lazy-img" alt="Aldo Praherda"  width="156"  height="180" />
 		</div>
 
 	  </div>
@@ -1284,6 +1294,10 @@
 	  link.addEventListener('click', () => {
 		document.getElementById('navMenu').classList.remove('active');
 	  });
+	});
+	
+	document.querySelectorAll('.lazy-img').forEach(img => {
+	  img.onload = () => img.classList.add('loaded');
 	});
 </script>
 
