@@ -84,6 +84,59 @@
       transition: color 0.2s;
     }
     nav a:hover { color: var(--cyan); }
+	.header-inner {
+	  display: flex;
+	  justify-content: space-between;
+	  align-items: center;
+	}
+
+	/* HAMBURGER (hidden desktop) */
+	.menu-toggle {
+	  display: none;
+	  font-size: 1.5rem;
+	  background: none;
+	  border: none;
+	  color: var(--cyan);
+	  cursor: pointer;
+	}
+
+	/* NAV DEFAULT */
+	nav {
+	  display: flex;
+	}
+
+	/* 📱 MOBILE */
+	@media (max-width: 768px) {
+
+	  .menu-toggle {
+		display: block;
+	  }
+
+	  nav {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		background: rgba(10,14,23,0.98);
+		backdrop-filter: blur(10px);
+
+		flex-direction: column;
+		align-items: center;
+
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+	  }
+
+	  nav a {
+		margin: 16px 0;
+		font-size: 0.9rem;
+	  }
+
+	  nav.active {
+		max-height: 300px;
+	  }
+	}
 
     /* ─── Sections ─── */
     section { padding: 42px 0; }
@@ -448,14 +501,24 @@
 <body>
 
 <header>
-  <div class="container">
+  <div class="container header-inner">
+
     <div class="logo">Aldo Septyan Praherda</div>
-    <nav>
+
+    <!-- HAMBURGER -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+    <!-- NAV -->
+    <nav id="navMenu">
       <a href="#projects">Projects</a>
+      <a href="#skills">Skills &amp; Education</a>
       <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
     </nav>
+
   </div>
 </header>
+
 <main>
 	<!-- ═══════════════ PROJECT DETAIL MODAL ═══════════════ -->
 	<div class="modal-overlay" id="projectModal" onclick="if(event.target===this)closeModal()">
@@ -1212,6 +1275,16 @@
 		this.classList.toggle('zoomed');
 		});
 	}
+	
+	function toggleMenu() {
+	  document.getElementById('navMenu').classList.toggle('active');
+	}
+	
+	document.querySelectorAll('#navMenu a').forEach(link => {
+	  link.addEventListener('click', () => {
+		document.getElementById('navMenu').classList.remove('active');
+	  });
+	});
 </script>
 
 </body>
